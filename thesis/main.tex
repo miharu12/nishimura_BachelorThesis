@@ -1,0 +1,149 @@
+%
+% 北見工業大学卒業論文
+%
+%%%%%%%%%%%%%%%%%%%%%%%%% Preamble %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt,openany]{ltjsbook}
+ 
+\usepackage{mystyle}
+\geometry{margin=19mm,top=25.4mm,bottom=25.4mm}
+
+\renewcommand{\bibname}{参考文献}
+
+\begin{document}
+
+%挿入するソースコードのフォント
+\lstset{
+  numbers=left,
+  stepnumber=1,
+  numberstyle=\small\rmfamily,
+  basicstyle=\small\ttfamily,
+  frame={tb}
+}
+
+\renewcommand{\lstlistingname}{ソースコード}
+
+%表紙
+\thispagestyle{empty}
+
+%学士論文
+\begin{center}
+ {\LARGE
+ \vspace*{5cm}
+ {\huge{20○○年度\ 北見工業大学\ 工学部}}\\
+ {\huge{情報デザイン・コミュニケーション工学コース}}\\
+ {\huge{学士論文}}\\
+ \vspace{2cm}
+ {\Huge{○○○に関する研究}}\\
+ \vspace{6cm}
+ {\huge 数理波動システム研究室}\\
+ {\huge 著者}\\
+ {\huge 指導教員\ \ 杉坂純一郎}\\
+ }
+\end{center}
+
+%修士論文
+% \begin{center}
+%     {\LARGE
+%     \vspace*{5cm}
+%     {\huge{20○○年度\ 北見工業大学大学院\ 工学専攻}}\\
+%     {\huge{情報通信工学プログラム}}\\
+%     {\huge{修士論文}}\\
+%     \vspace{2cm}
+%     {\Huge{○○に関する研究}}\\
+%     \vspace{6cm}
+%     {\huge 数理波動システム研究室}\\
+%     {\huge 著者}\\
+%     {\huge 指導教員\ \ 杉坂純一郎}\\
+%     }
+% \end{center}
+
+\newpage
+\thispagestyle{empty}
+\begin{center}
+ \vspace{2cm}
+\end{center}
+
+\frontmatter
+
+%目次
+\tableofcontents
+
+\mainmatter
+
+%本文
+\chapter{序論}
+\input{Introduction.tex}
+\section{研究背景}
+\section{研究目的}
+\section{本論文の構成}
+
+\chapter{F{\ttfamily\#}}\label{chap:Fsharp}
+\input{Fsharp.tex}
+\section{関数定義}
+\section{クラス定義}
+\section{モジュール}
+
+\chapter{関連言語}\label{chap:Related}
+\input{Related_ang.tex}
+\section{HTML}
+\section{JavaScript}
+
+\chapter{実装機能}\label{chap:Features}
+\input{Features.tex}
+\section{アニメーション描画領域}
+\subsection{JavaScriptによる時間制御処理}
+\subsection{HTMLによる描画領域設定}
+\subsection{ボタン表示位置の設定}
+\section{ボタン効果}
+\subsection{startボタン}
+\subsection{resetボタン}
+\section{図形}
+\subsection{生成と表示}
+\subsection{スタイル制御}
+\subsection{時間に応じた変形・移動}
+\subsection{複数図形の同時制御}
+\section{画像}
+\section{テキスト}
+\section{アニメーション図説フレームワークの機能}
+
+\chapter{結論}\label{chap:conclusion}
+\input{Conclusion.tex}
+
+%\chapter{原理}\label{chap:principle}
+%\section{XXXの原理}
+%\subsection{aaa}
+%\input{aaa.tex}
+%\subsection{bbb}
+%\input{bbb.tex}
+%\section{YYYの原理}
+%\input{yyy.tex}
+%
+%\chapter{数値解析手法}\label{chap:numericalAnalysis}
+%\section{手法AAA}
+%\input{MethodAAA.tex}
+%\section{手法BBB}
+%\input{MethodBBB.tex}
+%
+%\chapter{実験}\label{chap:experiment}
+%\section{AAA作製}
+%\input{ExperimentAAA.tex}
+%\section{BBB測定}
+%\input{ExperimentBBB.tex}
+
+\appendix
+
+%付録
+\chapter{コード集}
+\input{AppendixA.tex}
+
+\backmatter
+
+%謝辞
+\chapter*{謝辞}
+\input{Acknowledge.tex} 
+
+%参考文献
+\bibliography{reference}
+\bibliographystyle{ieicetr}
+
+\end{document}

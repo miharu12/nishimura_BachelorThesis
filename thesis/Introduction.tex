@@ -1,0 +1,49 @@
+%数式
+%\begin{align}
+%    f(x) &= ax^2+bx+c_1 %＆の位置で各行の数式位置をそろえる
+%    \label{funcf} %式のラベル
+%    \\  %改行
+%    g(x) &= x+c_2
+%    \label{funcg}
+%\end{align}
+%%式の参照：
+%式(\ref{funcf})は関数$f(x)$を、式(\ref{funcg})は関数$g(x)$を表している。
+%ベクトルは太字：$\vE$、変数はイタリック：$x$、それ以外はローマン体：$\mathrm{S}_1$
+%\begin{align}
+%    y = \tpT{\vw}\vx
+%\end{align}
+%単位を含む数値：$\SI{0.47}{\micro\farad}$、$\SI{3.1}{\kilo\metre}$
+%%図の挿入：
+%\inputfigure{abc.pdf}{ここに図の説明を書く}
+%\par
+%%\refは図番号に自動的に置き換わる：
+%図\ref{abc.pdf}にサンプル図を示す。
+%
+%\begin{table}[htbp]
+%    \caption{表のキャプション}
+%    \label{table:tableSample}
+%    \centering
+%     \begin{tabular}{clll} %cは中央、lは左寄せ、rは右寄せ
+%      \hline
+%      AAA & BBB & CCC & DDD \\
+%      \hline
+%      123 & $x$ & $y$ & aaa \\
+%      456 & $a$ & $b$ & bbb \\
+%      \hline
+%     \end{tabular}
+%\end{table}
+%%\refは表番号に自動的に置き換わる：
+%表\ref{table:tableSample}にサンプル図を示す。
+%\par
+%文献\cite{sugisaka2020lensless}引用。
+%\par
+%ソースコード\ref{code_C}はC言語のコード。
+%\begin{lstlisting}[caption={C言語},label={code_C}]
+%#include <stdio.h>
+%int main()
+%{
+%    printf("Hello World!\n");
+%    return 0;  /* 正常終了 */
+%}
+%\end{lstlisting}
+\nocite{*}
