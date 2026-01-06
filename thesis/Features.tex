@@ -40,7 +40,7 @@ static member animation (outputdir:string) (projectname:string) (s:ViewBoxStyle)
 6～8行目では、アニメーションの描画領域を設定するHTMLファイルを自動生成する処理を実装している。これらの処理の詳細は、\ref{subsec:javascript}節および\ref{subsec:html}節において述べる。
 
 \subsection{JavaScriptによる時間制御処理}\label{subsec:javascript}
- ソースコード\ref{repeatSeq}は、アニメーション生成における時間制御処理を行う処理を実装したコードである。
+ ソースコード\ref{repeatSeq}は、ソースコード\ref{animation_fs}内のアニメーション生成における時間制御を行う処理を実装したコードである。
  \begin{lstlisting}[caption={時間制御処理},label={repeatSeq},breaklines=true,breakatwhitespace=false]
 wrJS.Write "function repeatSeq(fn, interval, Nt, onComplete)"
 wrJS.Write "{"
@@ -61,7 +61,12 @@ wrJS.Write "    }"
 wrJS.Write "    run();"
 wrJS.Write "}"
 \end{lstlisting}
-まず、1行目にて
+1行目において、アニメーション生成における時間制御処理を行うrepeatSeq関数を定義している。本関数は四つの引数を取る。
+第一引数は、各フレームごとに実行される処理を表す関数であり、フレーム番号tを引数として受け取る。第二引数は、処理の実行時間をミリ秒単位で指定するものであり、アニメーションの時間的な間隔を制御する。
+第三引数は、処理を繰り返す回数を表し、アニメーションの総フレーム数に相当する。第四引数は、すべての繰り返し処理が終了した後に実行される空の関数である。
+関数内部では、変数tを用いてフレーム番号を管理している。内部関数runにおいて、tがNt未満である場合は、fn(t)を実行する。その後setTimeoutを用いて一定時間後に再び呼び出すことで、処理を繰り返している。
+tがNtに達した時点で繰り返し処理を終了し、onCompleteを実行することで、アニメーションを終了する。
+
 \subsection{HTMLによる描画領域設定}\label{subsec:html}
 \subsection{ボタン表示位置の設定}
 \section{ボタン効果}
