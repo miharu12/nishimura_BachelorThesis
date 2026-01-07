@@ -42,24 +42,21 @@ static member animation (outputdir:string) (projectname:string) (s:ViewBoxStyle)
 \subsection{JavaScriptによる時間制御処理}\label{subsec:javascript}
  ソースコード\ref{repeatSeq}は、ソースコード\ref{animation_fs}内のアニメーション生成における時間制御を行う処理を実装したコードである。
  \begin{lstlisting}[caption={時間制御処理},label={repeatSeq},breaklines=true,breakatwhitespace=false]
-wrJS.Write "function repeatSeq(fn, interval, Nt, onComplete)"
-wrJS.Write "{"
-wrJS.Write "    let t = 0;"
-wrJS.Write "    function run()"
-wrJS.Write "    {"
-wrJS.Write "        if (t < Nt)"
-wrJS.Write "        {"
-wrJS.Write "            fn(t);"
-wrJS.Write "            t++;"
-wrJS.Write "            setTimeout(run, interval);"
-wrJS.Write "        }"
-wrJS.Write "        else"
-wrJS.Write "        {"
-wrJS.Write "            onComplete();"
-wrJS.Write "        }"
-wrJS.Write "    }"
-wrJS.Write "    run();"
-wrJS.Write "}"
+        wrJS.Write "    function run()"
+        wrJS.Write "    {"
+        wrJS.Write "        if (t < Nt)"
+        wrJS.Write "        {"
+        wrJS.Write "            fn(t);"
+        wrJS.Write "            t++;"
+        wrJS.Write "            setTimeout(run, interval);"
+        wrJS.Write "        }"
+        wrJS.Write "        else"
+        wrJS.Write "        {"
+        wrJS.Write "            onComplete();"
+        wrJS.Write "        }"
+        wrJS.Write "    }"
+        wrJS.Write "    run();"
+        wrJS.Write "}"
 \end{lstlisting}
 1行目において、アニメーション生成における時間制御処理を行うrepeatSeq関数を定義している。本関数は四つの引数を取る。
 第一引数は、各フレームごとに実行される処理を表す関数であり、フレーム番号tを引数として受け取る。第二引数は、処理の実行時間をミリ秒単位で指定するものであり、アニメーションの時間的な間隔を制御する。
@@ -68,10 +65,42 @@ wrJS.Write "}"
 tがNtに達した時点で繰り返し処理を終了し、onCompleteを実行することで、アニメーションを終了する。
 
 \subsection{HTMLによる描画領域設定}\label{subsec:html}
-\subsection{ボタン表示位置の設定}
+ソースコード\ref{html_code}は、ソースコード\ref{animation_fs}内のSVGを用いたアニメーション描画領域を生成する処理を実装したコードである。
+ \begin{lstlisting}[caption={描画領域設定},label={html_code},breaklines=true,breakatwhitespace=false]
+        write ("<svg viewBox=\"0 0 "+s.sX.ToString()+" "+s.sY.ToString()+"\" ")
+        write ("width=\""+s.sX.ToString()+"px\" ")
+        write ("heigth=\""+s.sY.ToString()+"px\" ")
+        write "xmlns=\"http://www.w3.org/2000/svg\" "
+        write ("style=\"margin-left: "+s.mX.ToString()+"; ")
+        write ("margin-top: "+s.mY.ToString()+"; ")
+        write "position: absolute;"
+        write ("background-color: "+s.backgroundColor+";")
+        write "\">"
+        code(f,p)
+        write "</svg>"
+\end{lstlisting}
+1～3行目では、SVG要素を生成し、描画領域の大きさを設定している。5～8行目ではstyle属性を用いて、描画領域の配置位置および背景色を指定している。
+9～11行目では、code関数によってSVG内部の描画内容を生成し、最終的にSVGタグを閉じることで描画領域を完成させている。
+
+%\subsection{ボタン表示位置の設定}
 \section{ボタン効果}
 \subsection{startボタン}
+ \begin{lstlisting}[caption={startボタン},label={startbuttom_html},breaklines=true,breakatwhitespace=false]
+</div>
+<button id = "startButtonstart0" onclick = "animationStartMap['start0']()" style = "position: absolute; margin-left: 960px; margin-top: 450px; z-index: 1000;" >
+Start
+</button>
+</div>
+\end{lstlisting}
+
 \subsection{resetボタン}
+ \begin{lstlisting}[caption={resetボタン},label={resetbuttom_html},breaklines=true,breakatwhitespace=false]
+</div>
+<button id = "resetButtonstart0" onclick = "animationResetMap['reset0']()" style = "position: absolute; margin-left: 960px; margin-top: 475px; z-index: 1000;" >
+Reset
+</button>
+</div>
+\end{lstlisting}
 \section{図形}
 \subsection{生成と表示}
 \subsection{スタイル制御}
