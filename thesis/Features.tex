@@ -13,7 +13,7 @@ FigureAnimation
 AnimationSetting
 position
 
-\section{アニメーション描画領域}
+\section{アニメーション描画領域}\label{sec:animation}
  fsxファイルにおいてソースコード\ref{animation_fsx}のような記述を行うことで、fsファイルに定義されたソースコード\ref{animation_fs}が呼び出され、アニメーション描画領域が生成される。
   \begin{lstlisting}[caption={アニメーション描画領域を生成するfsxファイル},label={animation_fsx},breaklines=true,breakatwhitespace=false]
 html.animation outputdir "PresentationSlide_nishimura" {sX=800; sY=580; mX=1040; mY=450; backgroundColor="#bbeeff"} p (960,450) <| fun (f,p) ->
@@ -84,23 +84,61 @@ tがNtに達した時点で繰り返し処理を終了し、onCompleteを実行�
 
 %\subsection{ボタン表示位置の設定}
 \section{ボタン効果}
-\subsection{startボタン}
- \begin{lstlisting}[caption={startボタン},label={startbuttom_html},breaklines=true,breakatwhitespace=false]
+\ref{subsec:startbuttom}節および\ref{subsec:resetbuttom}節では、\ref{sec:animation}節で説明したアニメーションボタンの位置を指定する第五引数の設定により生成されるコードについて説明する。
+\ref{subsec:startbuttom}節ではstartボタンのソースコードとその動作について述べ、\ref{subsec:resetbuttom}節ではresetボタンのソースコードとその動作について説明する。
+\subsection{startボタン}\label{subsec:startbuttom}
+ソースコード\ref{startbuttom_html}はstartボタンを画面に表示するHTMLファイルであり、ソースコード\ref{startbuttom_js}はstartボタン押下時の処理を示すJavaScriptファイルである。
+これら二つのソースコードは、アニメーション描画領域の生成時に自動生成される。
+ \begin{lstlisting}[caption={startボタン（htmlファイル）},label={startbuttom_html},breaklines=true,breakatwhitespace=false]
 </div>
 <button id = "startButtonstart0" onclick = "animationStartMap['start0']()" style = "position: absolute; margin-left: 960px; margin-top: 450px; z-index: 1000;" >
 Start
 </button>
 </div>
 \end{lstlisting}
+ソースコード\ref{startbuttom_html}では、buttom要素を用いてstartボタンを画面上に配置し、onclick属性によってボタン押下時にJavaScriptで定義されたアニメーション開始処理を呼び出している。
+onclick属性では、animationStartMapに登録されたアニメーション識別子に対応する処理を呼び出している。また、position、margin-left、margin-topを指定することで、ボタンの表示位置を制御している。
+ \begin{lstlisting}[caption={startボタン（JavaScriptファイル）},label={startbuttom_js},breaklines=true,breakatwhitespace=false]
+const animationStartMap = {
+start0: () => {
+    repeatSeq(animationSeqID0, 6, 50, () => {
+    });
+},
+test: () => {}
+};
+\end{lstlisting}
+ソースコード\ref{startbuttom_js}では、start0に対応する処理としてrepeatseq関数を呼び出し、指定された時間間隔および回数でアニメーションを実行している。
+start0に対応する処理では、repeatSeq関数を用いてアニメーションの時間制御を行っており、第一引数にはアニメーションの描画処理、第二引数には時間間隔、第三引数には繰り返し回数を指定している。
+本コードでは、6msごとに50回フレームが切り替わることを表しており、全体で$30\,\mathrm{ms} \times 50\,\text{回} = 300\,\mathrm{ms}$のアニメーションとなる。
 
-\subsection{resetボタン}
- \begin{lstlisting}[caption={resetボタン},label={resetbuttom_html},breaklines=true,breakatwhitespace=false]
+
+\subsection{resetボタン}\label{subsec:resetbuttom}
+ソースコード\ref{resetbuttom_html}はresetボタンを画面に表示するHTMLファイルであり、ソースコード\ref{resetbuttom_js}はresetボタン押下時の処理を示すJavaScriptファイルである。
+これら二つのソースコードは、アニメーション描画領域の生成時に自動生成される。
+ \begin{lstlisting}[caption={resetボタン（HTMLファイル）},label={resetbuttom_html},breaklines=true,breakatwhitespace=false]
 </div>
 <button id = "resetButtonstart0" onclick = "animationResetMap['reset0']()" style = "position: absolute; margin-left: 960px; margin-top: 475px; z-index: 1000;" >
 Reset
 </button>
 </div>
 \end{lstlisting}
+ \begin{lstlisting}[caption={resetボタン（JavaScriptファイル）},label={resetbuttom_js},breaklines=true,breakatwhitespace=false]
+const animationResetMap = {
+reset0: () => {
+    animationSeqResetID0();
+},
+test: () => {}
+};
+
+function resetAll(){
+    for (const key in animationResetMap) {
+        if (typeof animationResetMap[key] === "function") {
+            animationResetMap[key]();
+        }
+    }
+}
+\end{lstlisting}
+
 \section{図形}
 \subsection{生成と表示}
 \subsection{スタイル制御}
