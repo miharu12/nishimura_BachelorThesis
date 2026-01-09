@@ -122,6 +122,8 @@ Reset
 </button>
 </div>
 \end{lstlisting}
+ソースコード\ref{resetbuttom_html}では、buttom要素を用いてresetボタンを画面上に配置し、onclick属性によってボタン押下時にJavaScriptで定義されたアニメーションのリセット処理を呼び出している。
+ボタンの配置方法および表示位置の制御は、\ref{subsec:startbuttom}節で示したstartボタンの場合と同様であるため、ここでは省略する。
  \begin{lstlisting}[caption={resetボタン（JavaScriptファイル）},label={resetbuttom_js},breaklines=true,breakatwhitespace=false]
 const animationResetMap = {
 reset0: () => {
