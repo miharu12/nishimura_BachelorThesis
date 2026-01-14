@@ -140,10 +140,62 @@ function resetAll(){
     }
 }
 \end{lstlisting}
+ソースコード\ref{resetbuttom_js}では、各アニメーションをリセットする処理を示したコードである。
+resetAll関数では、animationResetMapに登録されているすべてのリセット処理を順に実行している。これにより、複数のアニメーションを同時に初期状態へ戻すことが可能となる。
 
 \section{図形}
+この節では、本研究においてアニメーションとして表示される図形について説明する。
+本研究では、図形およびアニメーション処理の定義をfsファイルに記述し、fsxファイルにおいて具体的な数値を与えることでアニメーションを実行している。
+
 \subsection{生成と表示}
+ソースコード\ref{AnimationLine}では、直線を描画するアニメーション処理を示したコードである。
+ \begin{lstlisting}[caption={直線を描画するアニメーションの生成および表示処理（fsファイル）},label={AnimationLine},breaklines=true,breakatwhitespace=false]
+and Line = {
+    Start:tposition;
+    End:tposition;}
+and AnimationLine(s:Style,canvasX:int,canvasY:int) =
+    let id = nextContentsID()
+    let s0 = Style ([{Key="visibility";Value="hidden"}]@s.list)
+    let s1 = Style ([{Key="visibility";Value="visible"}]@s.list)
+    do
+        html.taga ("line", [Atr("id",id);]@[s0.atr])
+    member this.ID with get() = id
+    member this.P (f:Line) = 
+        let t = Var_e "t"
+        wrJS.Write ("    var e = document.getElementById(\""+id+"\");")
+        wrJS.Write ("    var x1 = " + (f.Start.X t).str JavaScript + ";")
+        wrJS.Write ("    var y1 = " + (canvasY - f.Start.Y t).str JavaScript + ";")
+        wrJS.Write ("    var x2 = " + (f.End.X t).str JavaScript + ";")
+        wrJS.Write ("    var y2 = " + (canvasY - f.End.Y t).str JavaScript + ";")
+        wrJS.Write ("    e.setAttribute(\"style\"," + "\"" + s1.code0 + "\");")
+        wrJS.Write "    e.setAttribute(\"x1\", x1);"
+        wrJS.Write "    e.setAttribute(\"y1\", y1);"
+        wrJS.Write "    e.setAttribute(\"x2\", x2);"
+        wrJS.Write "    e.setAttribute(\"y2\", y2);"
+        
+        wrJSAnimationSeqReset.Write ("    var e = document.getElementById(\""+id+"\");")
+        wrJSAnimationSeqReset.Write ("    e.setAttribute(\"style\"," + "\"" + s0.code0 + "\");")
+\end{lstlisting}
+1～3行目では、直線の始点および終点の座標を表している。なお、StartおよびEndはtposition型で定義されており、二次空間上の位置を表す。
+fsxファイルにおいて具体的な数値を与えることで直線の生成が可能となる。
+\par
+6行目では、s0はvisibilityがhiddenに設定されており、非表示状態を表す。7行目では、s1はvisibilityがvisibleに設定されており、表示状態を表す。
+9行目に示すように、直線が生成された段階ではs0の状態になっている。その後、startボタンが押下されることで、18行目でにおいてs0からs1の状態へと切り替わる。
+\par
+また、resetボタンが押下されると、25行目に示すように初期状態であるs0の状態に戻る。このようにして図形の生成および表示制御を行っている。
+
 \subsection{スタイル制御}
+ソースコード\ref{line}では、直線のスタイルを指定するコードである。
+ \begin{lstlisting}[caption={直線のスタイル（fsxファイル）},label={line},breaklines=true,breakatwhitespace=false]
+let line0 = f.animationLine Style[stroke.width 3.0; stroke.color "#ff0000"]
+let line1 = f.animationLine Style[stroke.width 3.0; stroke.dash "1,3" stroke.color "#008000"]
+let line2 = f.animationLine Style[stroke.width 3.0; stroke.dash "4,4" stroke.color "#000000"]
+let line3 = f.animationLine Style[stroke.width 5.0; stroke.color "#000000"]
+\end{lstlisting}
+line0は太さ3.0の赤色の実線である。line1は太さ3.0、描画長さ1、空白長さ3を指定した緑色の点線である。line2は太さ3.0、描画長さ4、空白長さ4を指定した黒色の破線である。line3は太さ5.0の黒色の実線である。
+\par
+これらを実行した結果を以下の図に示す。
+
 \subsection{時間に応じた変形・移動}
 \subsection{複数図形の同時制御}
 \section{画像}
