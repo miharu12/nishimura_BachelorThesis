@@ -197,7 +197,22 @@ line0は太さ3.0の赤色の実線である。line1は太さ3.0、描画長さ1
 これらを実行した結果を以下の図に示す。
 
 \subsection{時間に応じた変形・移動}
+ソースコード\ref{line_times}では、直線の始点および終点の座標を時間の関数として定義している。
+ \begin{lstlisting}[caption={時間に応じた移動（fsxファイル）},label={line_times},breaklines=true,breakatwhitespace=false]
+f.seq {FrameTime=30; FrameNumber=1000} <| fun _ ->
+        line0.P {Start = {X = fun _ -> Dbl_e 200
+                          Y = fun t -> 240+100*asm.sin(-2.0*Math.PI*t/100)}
+                 End = {X = fun _ -> Dbl_e 400
+                        Y = fun t -> 240+100*asm.sin(2.0*Math.PI*t/100)}}
+\end{lstlisting}
+x座標はそれぞれ一定値（200,400）に固定されており、直線は水平方向に配置されている。一方、y座標は時間tに依存する正弦関数として定義されており、直線の両端が周期的に上下方向へ振動するアニメーションになっている。
+また、f.seqはアニメーションにおける時間進行を制御する関数であり、FrameTime=30、FrameNumber=1000の指定により、30ms間隔で1000フレームのアニメーションを生成している。
+\par
+このような任意の値をfsxファイルで与えることで、ソースコード\ref{AnimationLine}の14行目～17行目に示すJavaScriptにより計算が行われ、その結果がアニメーションに適用される。
+
 \subsection{複数図形の同時制御}
+
+
 \section{画像}
 \section{テキスト}
 \section{アニメーション図説フレームワークの機能}
