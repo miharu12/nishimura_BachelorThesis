@@ -148,7 +148,7 @@ resetAll関数では、animationResetMapに登録されているすべてのリ�
 本研究では、図形およびアニメーション処理の定義をfsファイルに記述し、fsxファイルにおいて具体的な数値を与えることでアニメーションを実行している。
 
 \subsection{生成と表示}
-ソースコード\ref{AnimationLine}では、直線を描画するアニメーション処理を示したコードである。
+ソースコード\ref{AnimationLine}は、直線を描画するアニメーション処理を示したコードである。
  \begin{lstlisting}[caption={直線を描画するアニメーションの生成および表示処理（fsファイル）},label={AnimationLine},breaklines=true,breakatwhitespace=false]
 and Line = {
     Start:tposition;
@@ -211,8 +211,70 @@ x座標はそれぞれ一定値（200,400）に固定されており、直線は
 このような任意の値をfsxファイルで与えることで、ソースコード\ref{AnimationLine}の14行目～17行目に示すJavaScriptにより計算が行われ、その結果がアニメーションに適用される。
 
 \subsection{複数図形の同時制御}
+ソースコード\ref{sharps_times}では、複数の図形を同一の描画領域内で同時に制御する例を示す。
+ \begin{lstlisting}[caption={複数図形の同時制御（fsxファイル）},label={sharps_times},breaklines=true,breakatwhitespace=false]
+let line1 = f.animationLine Style[stroke.width 4.0; stroke.dash "4,4"; stroke.color "#ff69b4"]
+let elps1 = f.animationArc Style[stroke.width 6.0; stroke.color "#006400"; stroke.fill "none";]
+// 中心から右に破線描画
+f.seq {FrameTime=6; FrameNumber=500} <| fun s ->
+    line1.P {
+        Start = constCenter
+        End = {
+            X = fun t -> cx + R*t/(s.FrameNumber-1)
+            Y = fun _ -> cy }}
+// 円弧描画
+f.seq {FrameTime=6; FrameNumber=100} <| fun s ->
+    elps1.P {
+        center = constCenter
+        angle1 = fun _ -> I 0
+        angle2 = fun t -> 360*t/(s.FrameNumber-1)
+        radius = fun _ -> R }
+\end{lstlisting}
+本コードでは、直線を表すline1と円弧を表すelps1の2種類の図形を定義し、それぞれに対して独立したアニメーション制御を行っている。
+\par
+直線line1は、破線スタイルを持つ直線として定義されており、6msごとに500フレームのアニメーションが実行される。
+始点は中心座標に固定され、終点のx座標を時間に応じて増加させることで、破線が中心から右方向へ伸びていく挙動を表現している。
+\par
+一方、円弧elps1は、塗りつぶしなしの円弧として定義されており、6msごとに100フレームのアニメーションが実行される。
+中心および半径は一定とし、終端角度を時間に応じて変化させることで、円弧が徐々に描画されるアニメーションを実現している。
+\par
+このように、各図形に対して個別に時間制御を与えることで、破線を描画し、その端点から円弧が描かれるようなアニメーションを実現している。
 
-
-\section{画像}
 \section{テキスト}
+ソースコード\ref{AnimationText}は、テキストを描画するアニメーション処理を示したコードである。
+ \begin{lstlisting}[caption={テキストを描画するアニメーション（fsファイル）},label={AnimationText},breaklines=true,breakatwhitespace=false]
+and Text = {
+    //中心座標および表示するテキストを保持する構造体　（省略）}
+and MathText = {
+    //中心座標および表示する数式を保持する構造体　（省略）}
+and AnimationText(s:Style,originX:int,originY:int,canvasX:int,canvasY:int) =
+    let id = nextContentsID()
+    let ss = Style ([{Key="position";Value="absolute"}]@s.list)
+    let ss0 = Style ([{Key="display";Value="none"}]@ss.list)
+    let ss1 = Style ([{Key="display";Value="block"}]@ss.list)
+    do
+        html.tagb ("div", "id = \"" + id + "\" " + ss0.code) <| fun () -> ()
+    member this.ID with get() = id
+    member this.P (e:Text) = 
+        let t = Var_e "t"
+        wrJS.Write ("    var e = document.getElementById(\""+id+"\");")
+        wrJS.Write ("    e.setAttribute(\"style\"," + "\"" + ss1.code0 + "\");")
+        wrJS.Write ("    e.innerHTML = \"" + e.str + "\";")
+        wrJS.Write ("    var x = " + (originX + e.center.X t).str JavaScript+ ";")
+        wrJS.Write ("    var y = " + (originY + canvasY - e.center.Y t).str JavaScript+ ";")
+        wrJS.Write  "    x = x - e.offsetWidth/2;"
+        wrJS.Write  "    y = y - e.offsetHeight/2;"
+        wrJS.Write ("    e.setAttribute(\"style\"," + "\"" + ss1.code0 + " margin-left: \"+String(x)+\"px; margin-top: \"+String(y)+\"px; \");")
+        
+        wrJSAnimationSeqReset.Write ("    var e = document.getElementById(\""+id+"\");")
+        wrJSAnimationSeqReset.Write ("    e.setAttribute(\"style\"," + "\"" + ss0.code0 + "\");")
+\end{lstlisting}
+基本的な構造および制御方法は図形のアニメーションと同様である。ただし、テキストの表示制御にはdisplayを用いており、noneを非表示、blockを表示状態としている。
+\par
+20行目～21行目では、テキスト要素の幅および高さの半分を補正することで、指定した座標がテキストの中心となるよう調整している。
+これにより、テキストが時間に応じて移動するアニメーションを実現している。
+なお、詳細は割愛するが、同様の構造を用いることで、数式が時間とともに移動するアニメーションも実現可能である。
+
 \section{アニメーション図説フレームワークの機能}
+これまでの節で説明してきたアニメーションに加えて、繰り返し構文を用いることで、波形アニメーションのように多数の図形から構成される表現を容易に実現可能である。
+また、本研究で提案するアニメーション図説フレームワークでは、音声の再生や字幕、キャラクターを表示といった表現も可能である。
