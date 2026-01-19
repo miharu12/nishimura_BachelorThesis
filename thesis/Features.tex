@@ -1,17 +1,29 @@
  この章では、本システムの機能やそのアルゴリズムについて説明する。
-
-クラス
-html
-AnimationLine
-AnimationEllipse
-AnimationArc
-AnimationText
-AnimationPolygon
-SlideAnimation
-figure
-FigureAnimation
-AnimationSetting
-position
+表\ref{table:class}はクラス名と引数、そしてその大まかな役割をまとめた表である。
+\begin{table}[htbp]
+    \caption{アニメーション図説フレームワークのクラス}
+    \label{table:class}
+    \centering
+     \begin{tabular}{|l|p{6.3cm}|p{6.3cm}|} %cは中央、lは左寄せ、rは右寄せ
+      \hline
+      クラス & 引数 & 役割 \\
+      \hline
+      HTML & なし & HTMLの生成や機能追加 \\
+      AnimationLine & s:Style,canvasX:int,canvasY:int & 線の描画やアニメーション処理を行う \\
+      AnimationEllipse & s:Style,canvasX:int,canvasY:int & 円の描画やアニメーション処理を行う \\
+      AnimationArc & s:Style,canvasX:int,canvasY:int & 円弧の描画やアニメーション処理を行う \\
+      AnimationText & s:Style,originX:int,originY:int,canvasX:int,canvasY:int & テキストの描画やアニメーション処理を行う \\
+      AnimationPolygon & s:Style,canvasX:int,canvasY:int & 多角形の描画やアニメーション処理を行う \\
+      SlideAnimation & なし & スライド遷移のアニメーション制御 \\
+      figure & なし & 図形作製 \\
+      position & xx:float,yy:float & 座標入力の簡略化 \\
+      FigureAnimation & wr:OptionWriter,jswr:OptionWriter,figcounter:int,outputdir:string,projectname:string,originX:int,originY:int,canvasX:int,canvasY:int & 図形アニメーション全体の生成・管理・出力を統括 \\
+      \hline
+     \end{tabular}
+\end{table}
+\par
+この章では、本研究においてアニメーションとして表示される図形について説明する。
+本研究では、図形およびアニメーション処理の定義をfsファイルに記述し、fsxファイルにおいて具体的な数値を与えることでアニメーションを実行している。
 
 \section{アニメーション描画領域}\label{sec:animation}
  fsxファイルにおいてソースコード\ref{animation_fsx}のような記述を行うことで、fsファイルに定義されたソースコード\ref{animation_fs}が呼び出され、アニメーション描画領域が生成される。
@@ -41,7 +53,10 @@ static member animation (outputdir:string) (projectname:string) (s:ViewBoxStyle)
 
 \subsection{JavaScriptによる時間制御処理}\label{subsec:javascript}
  ソースコード\ref{repeatSeq}は、ソースコード\ref{animation_fs}内のアニメーション生成における時間制御を行う処理を実装したコードである。
- \begin{lstlisting}[caption={時間制御処理},label={repeatSeq},breaklines=true,breakatwhitespace=false]
+ \begin{lstlisting}[caption={時間制御処理（fsファイル）},label={repeatSeq},breaklines=true,breakatwhitespace=false]
+        wrJS.Write "function repeatSeq(fn, interval, Nt, onComplete)"
+        wrJS.Write "{"
+        wrJS.Write "    let t = 0;"
         wrJS.Write "    function run()"
         wrJS.Write "    {"
         wrJS.Write "        if (t < Nt)"
@@ -66,7 +81,7 @@ tがNtに達した時点で繰り返し処理を終了し、onCompleteを実行�
 
 \subsection{HTMLによる描画領域設定}\label{subsec:html}
 ソースコード\ref{html_code}は、ソースコード\ref{animation_fs}内のSVGを用いたアニメーション描画領域を生成する処理を実装したコードである。
- \begin{lstlisting}[caption={描画領域設定},label={html_code},breaklines=true,breakatwhitespace=false]
+ \begin{lstlisting}[caption={描画領域設定（fsファイル）},label={html_code},breaklines=true,breakatwhitespace=false]
         write ("<svg viewBox=\"0 0 "+s.sX.ToString()+" "+s.sY.ToString()+"\" ")
         write ("width=\""+s.sX.ToString()+"px\" ")
         write ("heigth=\""+s.sY.ToString()+"px\" ")
@@ -83,13 +98,13 @@ tがNtに達した時点で繰り返し処理を終了し、onCompleteを実行�
 9～11行目では、code関数によってSVG内部の描画内容を生成し、最終的にSVGタグを閉じることで描画領域を完成させている。
 
 %\subsection{ボタン表示位置の設定}
-\section{ボタン効果}
+\section{ボタン効果}\label{sec:button}
 \ref{subsec:startbuttom}節および\ref{subsec:resetbuttom}節では、\ref{sec:animation}節で説明したアニメーションボタンの位置を指定する第五引数の設定により生成されるコードについて説明する。
 \ref{subsec:startbuttom}節ではstartボタンのソースコードとその動作について述べ、\ref{subsec:resetbuttom}節ではresetボタンのソースコードとその動作について説明する。
 \subsection{startボタン}\label{subsec:startbuttom}
 ソースコード\ref{startbuttom_html}はstartボタンを画面に表示するHTMLファイルであり、ソースコード\ref{startbuttom_js}はstartボタン押下時の処理を示すJavaScriptファイルである。
 これら二つのソースコードは、アニメーション描画領域の生成時に自動生成される。
- \begin{lstlisting}[caption={startボタン（htmlファイル）},label={startbuttom_html},breaklines=true,breakatwhitespace=false]
+ \begin{lstlisting}[caption={startボタン（HTMLファイル）},label={startbuttom_html},breaklines=true,breakatwhitespace=false]
 </div>
 <button id = "startButtonstart0" onclick = "animationStartMap['start0']()" style = "position: absolute; margin-left: 960px; margin-top: 450px; z-index: 1000;" >
 Start
@@ -142,11 +157,11 @@ function resetAll(){
 \end{lstlisting}
 ソースコード\ref{resetbuttom_js}では、各アニメーションをリセットする処理を示したコードである。
 resetAll関数では、animationResetMapに登録されているすべてのリセット処理を順に実行している。これにより、複数のアニメーションを同時に初期状態へ戻すことが可能となる。
+\par
+\ref{sec:animation}節および\ref{sec:button}節で記述したコードを実行すると、図\ref{button.pdf}のようなアニメーション描画領域および操作用ボタンが表示される。
+\inputfigure{button.pdf}{アニメーション描画領域とボタン}
 
 \section{図形}
-この節では、本研究においてアニメーションとして表示される図形について説明する。
-本研究では、図形およびアニメーション処理の定義をfsファイルに記述し、fsxファイルにおいて具体的な数値を与えることでアニメーションを実行している。
-
 \subsection{生成と表示}
 ソースコード\ref{AnimationLine}は、直線を描画するアニメーション処理を示したコードである。
  \begin{lstlisting}[caption={直線を描画するアニメーションの生成および表示処理（fsファイル）},label={AnimationLine},breaklines=true,breakatwhitespace=false]
@@ -186,15 +201,16 @@ fsxファイルにおいて具体的な数値を与えることで直線の生�
 
 \subsection{スタイル制御}
 ソースコード\ref{line}では、直線のスタイルを指定するコードである。
- \begin{lstlisting}[caption={直線のスタイル（fsxファイル）},label={line},breaklines=true,breakatwhitespace=false]
-let line0 = f.animationLine Style[stroke.width 3.0; stroke.color "#ff0000"]
-let line1 = f.animationLine Style[stroke.width 3.0; stroke.dash "1,3" stroke.color "#008000"]
-let line2 = f.animationLine Style[stroke.width 3.0; stroke.dash "4,4" stroke.color "#000000"]
-let line3 = f.animationLine Style[stroke.width 5.0; stroke.color "#000000"]
+\begin{lstlisting}[caption={直線のスタイル（fsxファイル）},label={line},breaklines=true,breakatwhitespace=false]
+    let line0 = f.animationLine Style[stroke.width 3.0; stroke.color "#ff0000"]
+    let line1 = f.animationLine Style[stroke.width 3.0; stroke.dash "1,3" stroke.color "#008000"]
+    let line2 = f.animationLine Style[stroke.width 3.0; stroke.dash "4,4" stroke.color "#000000"]
+    let line3 = f.animationLine Style[stroke.width 5.0; stroke.color "#000000"]
 \end{lstlisting}
 line0は太さ3.0の赤色の実線である。line1は太さ3.0、描画長さ1、空白長さ3を指定した緑色の点線である。line2は太さ3.0、描画長さ4、空白長さ4を指定した黒色の破線である。line3は太さ5.0の黒色の実線である。
+\inputfigure{line.pdf}{直線のスタイル}
 \par
-これらを実行した結果を以下の図に示す。
+ソースコード\ref{line}を実行した結果を図\ref{line.pdf}に示す。
 
 \subsection{時間に応じた変形・移動}
 ソースコード\ref{line_times}では、直線の始点および終点の座標を時間の関数として定義している。
@@ -237,6 +253,8 @@ f.seq {FrameTime=6; FrameNumber=100} <| fun s ->
 \par
 一方、円弧elps1は、塗りつぶしなしの円弧として定義されており、6msごとに100フレームのアニメーションが実行される。
 中心および半径は一定とし、終端角度を時間に応じて変化させることで、円弧が徐々に描画されるアニメーションを実現している。
+ソースコード\ref{sharps_times}を実行した結果が、図\ref{shape.pdf}である。
+\inputfigure{shape.pdf}{複数図形}
 \par
 このように、各図形に対して個別に時間制御を与えることで、破線を描画し、その端点から円弧が描かれるようなアニメーションを実現している。
 
