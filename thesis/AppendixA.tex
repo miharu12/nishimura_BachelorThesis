@@ -1,3 +1,147 @@
-%本文に載せるまでもない公式やソースコードなどを書く。
-%ソースコード内の変数を本文に書くときは\texttt{projectname}のようにフォントを変える。
-%\lstinputlisting[breaklines=true]{test.fsx}
+ここでは、本研究で実装した図形、テキストのfsファイルを載せる。
+\begin{lstlisting}[caption={円を描画するアニメーション},label={ellipse},breaklines=true,breakatwhitespace=false]
+and Ellipse = {
+    /// 中心座標
+    center:tposition; 
+    /// 半径(x)
+    radiusX:num0->num0; 
+    /// 半径(y)
+    radiusY:num0->num0;}
+and AnimationEllipse(s:Style,canvasX:int,canvasY:int) =
+    let id = nextContentsID()
+    let s0 = Style ([{Key="visibility";Value="hidden"}]@s.list)
+    let s1 = Style ([{Key="visibility";Value="visible"}]@s.list)
+    do
+        html.taga ("ellipse", [Atr("id",id);]@[s0.atr])
+    member this.ID with get() = id
+    member this.P (e:Ellipse) = 
+        let t = Var_e "t"
+        wrJS.Write ("    var e = document.getElementById(\""+id+"\");")
+        wrJS.Write ("    var cx = " + (e.center.X t).str JavaScript + ";")
+        wrJS.Write ("    var cy = " + (canvasY - e.center.Y t).str JavaScript + ";")
+        wrJS.Write ("    var rx = " + (e.radiusX t).str JavaScript + ";")
+        wrJS.Write ("    var ry = " + (e.radiusY t).str JavaScript + ";")
+        wrJS.Write ("    e.setAttribute(\"style\"," + "\"" + s1.code0 + "\");")
+        wrJS.Write "    e.setAttribute(\"cx\", cx);"
+        wrJS.Write "    e.setAttribute(\"cy\", cy);"
+        wrJS.Write "    e.setAttribute(\"rx\", rx);"
+        wrJS.Write "    e.setAttribute(\"ry\", ry);"
+        
+        wrJSAnimationSeqReset.Write ("    var e = document.getElementById(\""+id+"\");")
+        wrJSAnimationSeqReset.Write ("    e.setAttribute(\"style\"," + "\"" + s0.code0 + "\");")
+\end{lstlisting}
+ \begin{lstlisting}[caption={円弧を描画するアニメーション},label={text},breaklines=true,breakatwhitespace=false]
+and Arc = {
+    /// 円弧の中心座標
+    center:tposition;
+    /// 開始角（度数法, 反時計回りに描画）
+    angle1:num0->num0;
+    /// 終了角（度数法, 反時計回りに描画）
+    angle2:num0->num0;
+    /// 円弧の半径
+    radius:num0->num0;}
+and AnimationArc(s:Style,canvasX:int,canvasY:int) =
+    let id = nextContentsID()
+    let s0 = Style ([{Key="visibility";Value="hidden"}]@s.list)
+    let s1 = Style ([{Key="visibility";Value="visible"}]@s.list)
+    do
+        html.taga ("path", [Atr("id",id);]@[s0.atr])
+    member this.ID with get() = id
+    member this.P (e:Arc) = 
+        let t = Var_e "t"
+        wrJS.Write ("    var e = document.getElementById(\""+id+"\");")
+        let a1 = Math.PI * e.angle1 t / 180
+        let x1 = e.center.X t + e.radius t * asm.cos a1
+        let y1 = e.center.Y t + e.radius t * asm.sin a1
+        wrJS.Write ("    var x1 = " + x1.str JavaScript+";")
+        wrJS.Write ("    var y1 = " + (canvasY - y1).str JavaScript+";")
+        let a2 = Math.PI * e.angle2 t / 180 - 1E-4
+        let x2 = e.center.X t + e.radius t * asm.cos a2
+        let y2 = e.center.Y t + e.radius t * asm.sin a2
+        wrJS.Write ("    var x2 = " + x2.str JavaScript+";")
+        wrJS.Write ("    var y2 = " + (canvasY - y2).str JavaScript+";")
+        wrJS.Write ("    var a1 = " + (e.angle1 t).str JavaScript+";")
+        wrJS.Write ("    var a2 = " + (e.angle2 t).str JavaScript+";")
+        wrJS.Write ("    var radiusX = " + (e.radius t).str JavaScript + ";")
+        wrJS.Write ("    var radiusY = " + (e.radius t).str JavaScript + ";")
+        wrJS.Write  "    var da = a2 - a1;"
+        wrJS.Write  "    if(da < 0.0) {da = a2 + 360 - a1;}"
+        wrJS.Write  "    var largerOrSmaller = 0;"
+        wrJS.Write  "    if(da > 180.0) {largerOrSmaller = 1;}"
+        wrJS.Write ("    d = \"M \" + x1 + \" \" + y1 + \" A \" + radiusX + \" \" + radiusY + \" 0 \" + largerOrSmaller + \" 0 \" + x2 + \" \" + y2 " + ";")
+        wrJS.Write ("    e.setAttribute(\"style\"," + "\"" + s1.code0 + "\");")
+        wrJS.Write ("    e.setAttribute(\"d\", " + "d" + ");")
+        
+        wrJSAnimationSeqReset.Write ("    var e = document.getElementById(\""+id+"\");")
+        wrJSAnimationSeqReset.Write ("    e.setAttribute(\"style\"," + "\"" + s0.code0 + "\");")
+\end{lstlisting}
+ \begin{lstlisting}[caption={テキスト・数式のアニメーション},label={ellipse},breaklines=true,breakatwhitespace=false]
+and Text = {
+    /// 中心座標
+    center:tposition;
+    /// 表示するテキスト
+    str:string; }
+and MathText = {
+    /// 中心座標
+    center:tposition;
+    /// 表示する数式
+    eq:num0; }
+and AnimationText(s:Style,originX:int,originY:int,canvasX:int,canvasY:int) =
+    let id = nextContentsID()
+    let ss = Style ([{Key="position";Value="absolute"}]@s.list)
+    let ss0 = Style ([{Key="display";Value="none"}]@ss.list)
+    let ss1 = Style ([{Key="display";Value="block"}]@ss.list)
+    do
+        html.tagb ("div", "id = \"" + id + "\" " + ss0.code) <| fun () -> ()
+    member this.ID with get() = id
+    member this.P (e:Text) = 
+        let t = Var_e "t"
+        wrJS.Write ("    var e = document.getElementById(\""+id+"\");")
+        wrJS.Write ("    e.setAttribute(\"style\"," + "\"" + ss1.code0 + "\");")
+        wrJS.Write ("    e.innerHTML = \"" + e.str + "\";")
+        wrJS.Write ("    var x = " + (originX + e.center.X t).str JavaScript+ ";")
+        wrJS.Write ("    var y = " + (originY + canvasY - e.center.Y t).str JavaScript+ ";")
+        wrJS.Write  "    x = x - e.offsetWidth/2;"
+        wrJS.Write  "    y = y - e.offsetHeight/2;"
+        wrJS.Write ("    e.setAttribute(\"style\"," + "\"" + ss1.code0 + " margin-left: \"+String(x)+\"px; margin-top: \"+String(y)+\"px; \");")
+        
+        wrJSAnimationSeqReset.Write ("    var e = document.getElementById(\""+id+"\");")
+        wrJSAnimationSeqReset.Write ("    e.setAttribute(\"style\"," + "\"" + ss0.code0 + "\");")
+        
+    member this.P (e:MathText) = 
+        let t = Var_e "t"
+        wrJS.Write ("    var e = document.getElementById(\""+id+"\");")
+        wrJS.Write ("    e.setAttribute(\"style\"," + "\"" + ss1.code0 + "\");")
+        wrJS.Write ("    e.innerHTML = \"\\\\(" + e.eq.str JavaScript + "\\\\)\";")
+        wrJS.Write  "    MathJax.typeset();"
+        wrJS.Write ("    var x =" + (originX + e.center.X t).str JavaScript+ ";")
+        wrJS.Write ("    var y =" + (originY + canvasY - e.center.Y t).str JavaScript+ ";")
+        wrJS.Write  "    x = x - e.offsetWidth/2;"
+        wrJS.Write  "    y = y - e.offsetHeight/2;"
+        wrJS.Write ("    e.setAttribute(\"style\"," + "\"" + ss1.code0 + " margin-left: \"+String(x)+\"px; margin-top: \"+String(y)+\"px; \");")
+        
+        wrJSAnimationSeqReset.Write ("    var e = document.getElementById(\""+id+"\");")
+        wrJSAnimationSeqReset.Write ("    e.setAttribute(\"style\"," + "\"" + ss0.code0 + "\");")
+\end{lstlisting}
+ \begin{lstlisting}[caption={多角形を描画するアニメーション},label={polygon},breaklines=true,breakatwhitespace=false]
+and AnimationPolygon(s:Style,canvasX:int,canvasY:int) =
+    let id = nextContentsID()
+    let s0 = Style ([{Key="visibility";Value="hidden"}]@s.list)
+    let s1 = Style ([{Key="visibility";Value="visible"}]@s.list)
+    do
+        html.taga ("polygon", [Atr("id", id);] @ [s.atr])
+    member this.ID with get() = id
+    member this.P (apex:list<tposition>) = 
+        let t = Var_e "t"
+        wrJS.Write ("    var e = document.getElementById(\"" + id + "\");")
+        wrJS.Write  "    var p = \"\";"
+        for p in apex do
+            wrJS.Write ("    var x = " + (p.X t).str JavaScript + ";")
+            wrJS.Write ("    var y = " + (canvasY - p.Y t).str JavaScript + ";")
+            wrJS.Write  "    p = p + String(x) + \",\" + String(y) + \" \";"
+        wrJS.Write ("    e.setAttribute(\"style\"," + "\"" + s1.code0 + "\");")
+        wrJS.Write "    e.setAttribute(\"points\", p);"
+        
+        wrJSAnimationSeqReset.Write ("    var e = document.getElementById(\""+id+"\");")
+        wrJSAnimationSeqReset.Write ("    e.setAttribute(\"style\"," + "\"" + s0.code0 + "\");")
+\end{lstlisting}

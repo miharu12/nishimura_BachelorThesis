@@ -158,8 +158,8 @@ function resetAll(){
 ソースコード\ref{resetbuttom_js}では、各アニメーションをリセットする処理を示したコードである。
 resetAll関数では、animationResetMapに登録されているすべてのリセット処理を順に実行している。これにより、複数のアニメーションを同時に初期状態へ戻すことが可能となる。
 \par
-\ref{sec:animation}節および\ref{sec:button}節で記述したコードを実行すると、図\ref{button.pdf}のようなアニメーション描画領域および操作用ボタンが表示される。
 \inputfigure{button.pdf}{アニメーション描画領域とボタン}
+\ref{sec:animation}節および\ref{sec:button}節で記述したコードを実行すると、図\ref{button.pdf}のようなアニメーション描画領域および操作用ボタンが表示される。
 
 \section{図形}
 \subsection{生成と表示}
@@ -296,3 +296,4 @@ and AnimationText(s:Style,originX:int,originY:int,canvasX:int,canvasY:int) =
 \section{アニメーション図説フレームワークの機能}
 これまでの節で説明してきたアニメーションに加えて、繰り返し構文を用いることで、波形アニメーションのように多数の図形から構成される表現を容易に実現可能である。
 また、本研究で提案するアニメーション図説フレームワークでは、音声の再生や字幕、キャラクターを表示といった表現も可能である。
+\inputfigure{character.pdf}{アニメーション図説フレームワークの機能}
