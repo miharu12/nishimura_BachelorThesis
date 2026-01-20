@@ -30,26 +30,54 @@
   \begin{lstlisting}[caption={アニメーション描画領域を生成するfsxファイル},label={animation_fsx},breaklines=true,breakatwhitespace=false]
 html.animation outputdir "PresentationSlide_nishimura" {sX=800; sY=580; mX=1040; mY=450; backgroundColor="#bbeeff"} p (960,450) <| fun (f,p) ->
 \end{lstlisting}
+\texttt{html.animation}は、HTML形式のアニメーション出力を生成するための関数である。本関数では、生成されたファイルの出力先ディレクトリとして\texttt{outputdir}を指定し、出力されるアニメーションの識別名として\texttt{PresentationSlide\_nishimura}を与えている。
+また、描画条件は指定されており、\texttt{sX}および\texttt{sY}はスライド領域の大きさを、\texttt{mX}および\texttt{mY}は表示領域における基準座標を表す。さらに、\texttt{backgroundColor}により背景色を指定することができる。
+\texttt{p(960,450)}はstartボタン、resetボタンの表示における基準座標を表す。
+最後に、\texttt{<| fun (f,p) ->}に続く部分では、アニメーションの各フレームにおける描画処理を関数として定義しており、フレームごとの描画内容を柔軟に記述することが可能となっている。
   \begin{lstlisting}[caption={アニメーション描画領域の生成処理を定義したfsファイル},label={animation_fs},breaklines=true,breakatwhitespace=false]
-static member animation (outputdir:string) (projectname:string) (s:ViewBoxStyle) (p:position) (buttonX:int,buttonY:int) code =
-    figcounter <- figcounter + 1
-    let f = FigureAnimation(wrBody,wrJS,figcounter,outputdir,projectname,s.mX,s.mY,s.sX,s.sY)
-    wrJS.Write "function repeatSeq(fn, interval, Nt, onComplete)"
-    //時間制御をおこなう処理　（省略）
-    write ("<svg viewBox=\"0 0 "+s.sX.ToString()+" "+s.sY.ToString()+"\" ")
-    //SVG要素を生成および属性設定処理　（省略）
-    write "</svg>"
-    let asc = nextAnimationGroup()
-    let fnameStart = f.jsStartControll asc
-    let fnameReset = f.jsResetControll asc
-    addAnimationButton (fnameStart,fnameReset,buttonX,buttonY)
+    static member animation (outputdir:string) (projectname:string) (s:ViewBoxStyle) (p:position) (buttonX:int,buttonY:int) code =
+        figcounter <- figcounter + 1
+        let f = FigureAnimation(wrBody,wrJS,figcounter,outputdir,projectname,s.mX,s.mY,s.sX,s.sY)
+        wrJS.Write "function repeatSeq(fn, interval, Nt, onComplete)"
+        wrJS.Write "{"
+        wrJS.Write "    let t = 0;"
+        wrJS.Write "    function run()"
+        wrJS.Write "    {"
+        wrJS.Write "        if (t < Nt)"
+        wrJS.Write "        {"
+        wrJS.Write "            fn(t);"
+        wrJS.Write "            t++;"
+        wrJS.Write "            setTimeout(run, interval);"
+        wrJS.Write "        }"
+        wrJS.Write "        else"
+        wrJS.Write "        {"
+        wrJS.Write "            onComplete();"
+        wrJS.Write "        }"
+        wrJS.Write "    }"
+        wrJS.Write "    run();"
+        wrJS.Write "}"
+        write ("<svg viewBox=\"0 0 "+s.sX.ToString()+" "+s.sY.ToString()+"\" ")
+        write ("width=\""+s.sX.ToString()+"px\" ")
+        write ("heigth=\""+s.sY.ToString()+"px\" ")
+        write "xmlns=\"http://www.w3.org/2000/svg\" "
+        write ("style=\"margin-left: "+s.mX.ToString()+"; ")
+        write ("margin-top: "+s.mY.ToString()+"; ")
+        write "position: absolute;"
+        write ("background-color: "+s.backgroundColor+";")
+        write "\">"
+        code(f,p)
+        write "</svg>"
+        let asc = nextAnimationGroup()
+        let fnameStart = f.jsStartControll asc
+        let fnameReset = f.jsResetControll asc
+        addAnimationButton (fnameStart,fnameReset,buttonX,buttonY)
 \end{lstlisting}
 ソースコード\ref{animation_fs}では、htmlクラスに静的メンバ関数として描画領域生成処理を定義している。本関数は五つの引数を取る。
 第一引数は、出力ファイルの保存先を指定する。第二引数は出力するファイル名を指定する。
 第三引数はアニメーション描画領域の設定を行う。第四引数はアニメーション描画領域の描画位置を指定する。第五引数はアニメーションボタンの位置を指定する。
 \par
-4～5行目では、アニメーションの時間制御を行うJavaScriptファイルを自動生成する処理を実装している。
-6～8行目では、アニメーションの描画領域を設定するHTMLファイルを自動生成する処理を実装している。これらの処理の詳細は、\ref{subsec:javascript}節および\ref{subsec:html}節において述べる。
+4～21行目では、アニメーションの時間制御を行うJavaScriptファイルを自動生成する処理を実装している。
+22～32行目では、アニメーションの描画領域を設定するHTMLファイルを自動生成する処理を実装している。これらの処理の詳細は、\ref{subsec:javascript}節および\ref{subsec:html}節において述べる。
 
 \subsection{JavaScriptによる時間制御処理}\label{subsec:javascript}
  ソースコード\ref{repeatSeq}は、ソースコード\ref{animation_fs}内のアニメーション生成における時間制御を行う処理を実装したコードである。
