@@ -30,7 +30,7 @@ and AnimationEllipse(s:Style,canvasX:int,canvasY:int) =
         wrJSAnimationSeqReset.Write ("    var e = document.getElementById(\""+id+"\");")
         wrJSAnimationSeqReset.Write ("    e.setAttribute(\"style\"," + "\"" + s0.code0 + "\");")
 \end{lstlisting}
- \begin{lstlisting}[caption={円弧を描画するアニメーション},label={text},breaklines=true,breakatwhitespace=false]
+ \begin{lstlisting}[caption={円弧を描画するアニメーション},label={Arc},breaklines=true,breakatwhitespace=false]
 and Arc = {
     /// 円弧の中心座標
     center:tposition;
@@ -75,7 +75,7 @@ and AnimationArc(s:Style,canvasX:int,canvasY:int) =
         wrJSAnimationSeqReset.Write ("    var e = document.getElementById(\""+id+"\");")
         wrJSAnimationSeqReset.Write ("    e.setAttribute(\"style\"," + "\"" + s0.code0 + "\");")
 \end{lstlisting}
- \begin{lstlisting}[caption={テキスト・数式のアニメーション},label={ellipse},breaklines=true,breakatwhitespace=false]
+ \begin{lstlisting}[caption={テキスト・数式のアニメーション},label={text},breaklines=true,breakatwhitespace=false]
 and Text = {
     /// 中心座標
     center:tposition;
