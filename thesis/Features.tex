@@ -6,7 +6,7 @@
     \centering
      \begin{tabular}{|l|p{6.3cm}|p{6.3cm}|} %cは中央、lは左寄せ、rは右寄せ
       \hline
-      クラス & 引数 & 役割 \\
+      クラス & コンストラクタ引数 & 役割 \\
       \hline
       HTML & なし & HTMLの生成や機能追加 \\
       AnimationLine & s:Style,canvasX:int,canvasY:int & 線の描画やアニメーション処理を行う \\
@@ -15,8 +15,8 @@
       AnimationText & s:Style,originX:int,originY:int,canvasX:int,canvasY:int & テキストの描画やアニメーション処理を行う \\
       AnimationPolygon & s:Style,canvasX:int,canvasY:int & 多角形の描画やアニメーション処理を行う \\
       SlideAnimation & なし & スライド遷移のアニメーション制御 \\
-      figure & なし & 図形作製 \\
-      position & xx:float,yy:float & 座標入力の簡略化 \\
+      figure & なし & 図形作成 \\
+      position & xx:float,yy:float & 2次元座標の生成・計算 \\
       FigureAnimation & wr:OptionWriter,jswr:OptionWriter,figcounter:int,outputdir:string,projectname:string,originX:int,originY:int,canvasX:int,canvasY:int & 図形アニメーション全体の生成・管理・出力を統括 \\
       \hline
      \end{tabular}
