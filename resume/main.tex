@@ -10,6 +10,17 @@
 
 \begin{document}
 
+%挿入するソースコードのフォント
+\lstset{
+  numbers=left,
+  stepnumber=1,
+  numberstyle=\small\rmfamily,
+  basicstyle=\small\ttfamily,
+  frame={tb}
+}
+
+\renewcommand{\lstlistingname}{ソースコード}
+
 \twocolumn[
 \begin{center}
 {\huge{数値解析用プログラミング言語と連動したアニメーション図説フレームワークの開発に関する研究}}\\
@@ -38,18 +49,52 @@ PowerPointにおいても、数値解析で用いたコードから直接グラ�
     \item 図形位置や大きさを数値によって制御可能とし、正確な図説表現を可能にする。
     \item 波形などの複雑なアニメーションを簡潔な記述で描画できる機能を提供する。
 \end{itemize}
+
 \section{使用言語}
 本フレームワークにおいて使用するプログラミング言語はF\texttt{\#}である。
 F\texttt{\#}は、コードが簡潔で可読性の高い関数型プログラミング言語であり、安全性が高く、複雑な処理の記述に適している。
 また、基本的に変更されない定義を記述する.fsファイルとユーザ処理を記述する.fsxファイルを分離できるという特徴を持つ。
 これにより、ユーザは必要最低限のコードのみを記述すればよく、記述量の削減と可読性の向上が可能となる。
+
 \section{フレームワークの実装}
-・・・は以下のように表される。
-式(1)は・・・を表す[2]。
+図１は、本研究で提案するアニメーション図説フレームワークにおけるアニメーション資料生成の流れを示したものである。
+\inputfigure{animation_resume.pdf}{関係図}
+以下では、この流れについて説明する。
+\begin{lstlisting}[caption={アニメーション描画領域の生成},label={animation_fsx},breaklines=true,breakatwhitespace=false]
+  html.animation outputdir "line" {sX=700; sY=440; mX=160; mY=590; backgroundColor="#bbeeff"} p (100,590) <| fun (f,p) ->
+\end{lstlisting}
+fsxファイルにおいて、ソースコード\ref{animation_fsx}のような記述を行うことで、fsファイルに定義されたアニメーション描画領域を生成する処理が呼び出され、描画領域が生成される。
+\texttt{html.animation}は、HTML形式のアニメーション出力を生成するための関数である。
+ユーザは生成されたファイルの出力先ディレクトリ、出力されるアニメーションの識別名、スライド領域の大きさ、
+表示領域における基準座標、背景色、ならびにstartボタンおよびresetボタンの表示位置を指定することができる。
+これらの情報をもとに、フレームワーク内部の処理が実行され、HTMLファイルおよびJavaScriptファイルが自動的に生成される。
+\par
+生成されたアニメーションでは、図形、テキスト、数式をコンテンツとして扱うことができる。
+ユーザが各コンテンツのスタイルを指定すると、その記述に基づいてHTMLファイルが生成される。
+また、コンテンツのアニメーション処理は数式によって動きを定義することができ、その記述をもとにJavaScriptファイルが生成される。
+JavaScriptファイル内で計算された座標位置がHTML側に反映されることで、アニメーションが制御されている。
+
+
 \section{結果}
-・・・の結果は・・・となった。
+前述したアニメーション資料生成の流れを、ソースコード\ref{line_fsx}に示す直線のスタイルおよび動きを用いて実行すると、図2の上に示すように直線が上下に揺れるアニメーションが表示される。
+\begin{lstlisting}[caption={直線のアニメーション},label={line_fsx},breaklines=true,breakatwhitespace=false]
+let line0 = f.animationLine Style[stroke.width 3.0; stroke.color "#ff4c4c"]
+f.seq {FrameTime=30; FrameNumber=1000} <| fun _ ->
+  line0.P {Start = {X = fun _ -> Dbl_e 200
+                    Y = fun t -> 240+100*asm.sin(-2.0*Math.PI*t/100)}
+           End = {X = fun _ -> Dbl_e 400
+                  Y = fun t -> 240+100*asm.sin(2.0*Math.PI*t/100)}}
+\end{lstlisting}
+ここでは、正弦関数を用いて直線の始点および終点のY座標を時間に応じて変化させることで、滑らかな上下運動を実現している。
+\par
+また、図2の下に示すアニメーションは繰り返し構文を用いて同一の図形を複数生成し、それらを同時に動作させた例である。
+このように、本フレームワークでは簡潔な記述によって、複数の図形を用いた動的なアニメーションを容易に作成することができる。
+\inputfigure{line.pdf}{図形のアニメーション}
+
 \section{まとめ}
-本研究では・・・を行った。・・・できることが明らかとなった。
+本研究では、アニメーション図説フレームワークを開発した。
+本フレームワークにより、数値解析用プログラミング言語（Aqualis）と共通のコードを用いて、図形や数式を含むアニメーションスライドを作成することが可能となった。
+これにより、解析結果の視覚的な説明を効率的に行う手法を示した。
 
 \begin{thebibliography}{99}
     % main.bblからコピーする
