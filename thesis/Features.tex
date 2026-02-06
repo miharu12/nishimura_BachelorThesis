@@ -24,6 +24,9 @@
 \par
 この章では、本研究においてアニメーションとして表示される図形について説明する。
 本研究では、図形およびアニメーション処理の定義をfsファイルに記述し、fsxファイルにおいて具体的な数値を与えることでアニメーションを実行している。
+図\ref{file_description.pdf}に、fsファイルとfsxファイルの役割分担およびソースファイル間の関係を示す。
+\inputfigure{file_description.pdf}{ソースファイル間の関係図}
+fsファイルはフレームワーク本体として提供され、fsxファイルはユーザが編集可能なスクリプトとしてアニメーション内容を記述する役割を持つ。
 
 \section{アニメーション描画領域}\label{sec:animation}
  fsxファイルにおいてソースコード\ref{animation_fsx}のような記述を行うことで、fsファイルに定義されたソースコード\ref{animation_fs}が呼び出され、アニメーション描画領域が生成される。
@@ -77,7 +80,13 @@ html.animation outputdir "PresentationSlide_nishimura" {sX=800; sY=580; mX=1040;
 第三引数はアニメーション描画領域の設定を行う。第四引数はアニメーション描画領域の描画位置を指定する。第五引数はアニメーションボタンの位置を指定する。
 \par
 4～21行目では、アニメーションの時間制御を行うJavaScriptファイルを自動生成する処理を実装している。
-22～32行目では、アニメーションの描画領域を設定するHTMLファイルを自動生成する処理を実装している。これらの処理の詳細は、\ref{subsec:javascript}節および\ref{subsec:html}節において述べる。
+\texttt{wrJS}はJavaScriptファイルに_texttt{""}内の内容を書き込むことを示す。
+22～32行目では、アニメーションの描画領域を設定するHTMLファイルを自動生成する処理を実装している。
+これらの処理の詳細は、\ref{subsec:javascript}節および\ref{subsec:html}節において述べる。
+\texttt{write}はHTMLファイルに\texttt{""}内の内容を書き込むことを示す。
+これらの関係は図\ref{animation.pdf}に示す。
+\inputfigure{animation.pdf}{アニメーション描画領域の生成}
+
 
 \subsection{JavaScriptによる時間制御処理}\label{subsec:javascript}
  ソースコード\ref{repeatSeq}は、ソースコード\ref{animation_fs}内のアニメーション生成における時間制御を行う処理を実装したコードである。
