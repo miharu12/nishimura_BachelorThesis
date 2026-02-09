@@ -75,18 +75,21 @@ html.animation outputdir "PresentationSlide_nishimura" {sX=800; sY=580; mX=1040;
         let fnameReset = f.jsResetControll asc
         addAnimationButton (fnameStart,fnameReset,buttonX,buttonY)
 \end{lstlisting}
-ソースコード\ref{animation_fs}では、htmlクラスに静的メンバ関数として描画領域生成処理を定義している。本関数は五つの引数を取る。
+ソースコード\ref{animation_fs}では、htmlクラスに静的メンバ関数として描画領域生成処理を定義している。
+本関数は五つの引数を取る。
 第一引数は、出力ファイルの保存先を指定する。第二引数は出力するファイル名を指定する。
-第三引数はアニメーション描画領域の設定を行う。第四引数はアニメーション描画領域の描画位置を指定する。第五引数はアニメーションボタンの位置を指定する。
+第三引数はアニメーション描画領域の設定を行う。第四引数はアニメーション描画領域の描画位置を指定する。
+第五引数はアニメーションボタンの位置を指定する。
 \par
 4～21行目では、アニメーションの時間制御を行うJavaScriptファイルを自動生成する処理を実装している。
-\texttt{wrJS}はJavaScriptファイルに_texttt{""}内の内容を書き込むことを示す。
+\texttt{wrJS}は、JavaScriptファイルに\texttt{""}内の内容を書き込むための出力関数である。
 22～32行目では、アニメーションの描画領域を設定するHTMLファイルを自動生成する処理を実装している。
-これらの処理の詳細は、\ref{subsec:javascript}節および\ref{subsec:html}節において述べる。
-\texttt{write}はHTMLファイルに\texttt{""}内の内容を書き込むことを示す。
+\texttt{write}は、HTMLファイルに\texttt{""}内の内容を書き込むための出力関数である。
+31行目では、ユーザ定義の描画処理を実行するために、関数関数\texttt{code}を呼び出している。
+本フレームワークでは、図形描画処理を関数として外部から受け取り設定としており、\texttt{code}を通してユーザが定義した描画処理を実行する。
+これらの処理の詳細については、\ref{subsec:javascript}節および\ref{subsec:html}節において述べる。
 これらの関係は図\ref{animation.pdf}に示す。
 \inputfigure{animation.pdf}{アニメーション描画領域の生成}
-
 
 \subsection{JavaScriptによる時間制御処理}\label{subsec:javascript}
  ソースコード\ref{repeatSeq}は、ソースコード\ref{animation_fs}内のアニメーション生成における時間制御を行う処理を実装したコードである。
