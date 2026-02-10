@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1200px" height="830px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(0.309075,0,0,0.464837,-135.349425,-194.725337)">
+        <rect x="491.338583" y="470.314961" width="1824.094488" height="810.289001" style="fill:rgb(230,240,255);"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-264.614037,-133.486239)">
+        <g transform="matrix(30,0,0,30,505.986552,293.899083)">
+        </g>
+        <text x="320.166552px" y="293.899083px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:30px;">htmlメソッド</text>
+    </g>
+    <g transform="matrix(0.307004,0,0,0.464837,469.55605,-194.725337)">
+        <rect x="491.338583" y="470.314961" width="1824.094488" height="810.289001" style="fill:rgb(230,240,255);"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-31.899495,104.158541)">
+        <g transform="matrix(30,0,0,30,80.717011,161.788991)">
+        </g>
+        <g transform="matrix(30,0,0,30,90.467011,161.788991)">
+        </g>
+        <g transform="matrix(30,0,0,30,281.777011,161.788991)">
+        </g>
+        <text x="80.717011px" y="161.788991px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:30px;">ﬁgur<tspan x="145.157011px " y="161.788991px ">e</tspan>メソッド</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-94.379791,-34.122285)">
+        <text x="720.651149px" y="152.155963px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20px;">html.<tspan x="769.831149px 779.811149px " y="152.155963px 152.155963px ">ca</tspan>nv<tspan x="813.251149px " y="152.155963px ">a</tspan>s S<tspan x="849.731149px " y="152.155963px ">t</tspan>yle[mar<tspan x="928.531149px " y="152.155963px ">g</tspan>in.left &quot;0p<tspan x="1030.951149px " y="152.155963px ">x</tspan>&quot;; mar<tspan x="1097.751149px " y="152.155963px ">g</tspan>in.<tspan x="1131.271149px 1138.511149px " y="152.155963px 152.155963px ">to</tspan>p &quot;0p<tspan x="1200.111149px " y="152.155963px ">x</tspan>&quot;;</text>
+        <text x="850.571149px" y="181.115963px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20px;">siz<tspan x="874.711149px 885.791149px 890.851149px " y="181.115963px 181.115963px 181.115963px ">e.w</tspan>idth &quot;1920p<tspan x="1014.851149px " y="181.115963px ">x</tspan>&quot;; siz<tspan x="1068.471149px " y="181.115963px ">e</tspan>.height &quot;1080p<tspan x="1215.171149px " y="181.115963px ">x</tspan>&quot;;</text>
+        <g transform="matrix(20,0,0,20,1087.171149,210.075963)">
+        </g>
+        <g transform="matrix(20,0,0,20,1093.601149,210.075963)">
+        </g>
+        <g transform="matrix(20,0,0,20,1100.031149,210.075963)">
+        </g>
+        <g transform="matrix(20,0,0,20,1106.461149,210.075963)">
+        </g>
+        <g transform="matrix(20,0,0,20,1113.791149,210.075963)">
+        </g>
+        <g transform="matrix(20,0,0,20,1120.221149,210.075963)">
+        </g>
+        <text x="850.571149px" y="210.075963px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20px;">ar<tspan x="869.371149px 880.131149px " y="210.075963px 210.075963px ">ea</tspan>.b<tspan x="908.991149px " y="210.075963px ">a</tspan>ckGr<tspan x="962.811149px " y="210.075963px ">o</tspan>undColor &quot;#ﬀﬀﬀ<tspan x="1126.651149px " y="210.075963px ">&quot;</tspan>] &lt;| fun () -&gt;</text>
+        <g transform="matrix(20,0,0,20,788.011149,239.035963)">
+        </g>
+        <g transform="matrix(20,0,0,20,794.511149,239.035963)">
+        </g>
+        <text x="738.571149px" y="239.035963px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20px;">html.ﬁg p &lt;| fun (f<tspan x="901.091149px " y="239.035963px ">,</tspan>p)-&gt;</text>
+        <text x="756.491149px" y="267.995963px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20px;">f<tspan x="761.871149px " y="267.995963px ">.</tspan></text>
+        <text x="767.431149px" y="267.995963px" style="font-family:'HaranoAjiGothic-Bold', 'Harano Aji Gothic', sans-serif;font-weight:700;font-size:20px;fill:rgb(0,0,255);">R<tspan x="780.831149px 792.451149px 802.751149px " y="267.995963px 267.995963px 267.995963px ">ect</tspan></text>
+        <g transform="matrix(20,0,0,20,1210.691149,267.995963)">
+        </g>
+        <g transform="matrix(20,0,0,20,1217.121149,267.995963)">
+        </g>
+        <text x="815.651149px" y="267.995963px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20px;">S<tspan x="827.031149px " y="267.995963px ">t</tspan>yle[s<tspan x="877.431149px 884.971149px 892.511149px 904.631149px 915.271149px 926.351149px 931.411149px " y="267.995963px 267.995963px 267.995963px 267.995963px 267.995963px 267.995963px 267.995963px ">troke.w</tspan>idth 1.0; s<tspan x="1036.231149px 1043.771149px 1051.311149px 1063.431149px 1074.071149px 1085.151149px 1090.451149px 1100.171149px " y="267.995963px 267.995963px 267.995963px 267.995963px 267.995963px 267.995963px 267.995963px 267.995963px ">troke.co</tspan>lor &quot;#bbeeﬀ<tspan x="1223.551149px " y="267.995963px ">&quot;</tspan>;</text>
+        <g transform="matrix(20,0,0,20,931.891149,296.955963)">
+        </g>
+        <g transform="matrix(20,0,0,20,938.391149,296.955963)">
+        </g>
+        <g transform="matrix(20,0,0,20,1028.091149,296.955963)">
+        </g>
+        <g transform="matrix(20,0,0,20,1034.521149,296.955963)">
+        </g>
+        <text x="868.491149px" y="296.955963px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20px;">s<tspan x="877.411149px 884.951149px 892.491149px 904.611149px 915.251149px " y="296.955963px 296.955963px 296.955963px 296.955963px 296.955963px ">troke</tspan>.ﬁll &quot;#bbeeﬀ<tspan x="1040.951149px " y="296.955963px ">&quot;</tspan>] &lt;| position(1320,280) ]</text>
+        <text x="1060.811149px" y="325.915963px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20px;">&lt;| 520 &lt;| 580</text>
+        <text x="756.491149px" y="354.875963px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20px;">f<tspan x="761.871149px " y="354.875963px ">.</tspan></text>
+        <text x="767.431149px" y="354.875963px" style="font-family:'HaranoAjiGothic-Bold', 'Harano Aji Gothic', sans-serif;font-weight:700;font-size:20px;fill:rgb(0,128,0);">ellip<tspan x="810.511149px " y="354.875963px ">s</tspan>e</text>
+        <g transform="matrix(20,0,0,20,1183.771149,354.875963)">
+        </g>
+        <g transform="matrix(20,0,0,20,1190.201149,354.875963)">
+        </g>
+        <text x="836.511149px" y="354.875963px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20px;">S<tspan x="847.891149px " y="354.875963px ">t</tspan>yle[s<tspan x="898.291149px 905.831149px 913.371149px 925.491149px 936.131149px 947.211149px 952.271149px " y="354.875963px 354.875963px 354.875963px 354.875963px 354.875963px 354.875963px 354.875963px ">troke.w</tspan>idth 1.0; s<tspan x="1057.091149px 1064.631149px 1072.171149px 1084.291149px 1094.931149px 1106.011149px 1111.311149px 1121.031149px " y="354.875963px 354.875963px 354.875963px 354.875963px 354.875963px 354.875963px 354.875963px 354.875963px ">troke.co</tspan>lor &quot;#ﬀ4c4c&quot;;</text>
+        <g transform="matrix(20,0,0,20,949.811149,383.835963)">
+        </g>
+        <g transform="matrix(20,0,0,20,956.311149,383.835963)">
+        </g>
+        <g transform="matrix(20,0,0,20,998.231149,383.835963)">
+        </g>
+        <g transform="matrix(20,0,0,20,1004.661149,383.835963)">
+        </g>
+        <text x="886.411149px" y="383.835963px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20px;">s<tspan x="895.331149px 902.871149px 910.411149px 922.531149px 933.171149px " y="383.835963px 383.835963px 383.835963px 383.835963px 383.835963px ">troke</tspan>.ﬁll &quot;#ﬀ4c4c&quot;] &lt;| position(1580,570)</text>
+        <g transform="matrix(20,0,0,20,1187.611149,412.795963)">
+        </g>
+        <text x="1074.571149px" y="412.795963px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20px;">&lt;| 100 &lt;| 100</text>
+    </g>
+    <g transform="matrix(0.638066,0,0,0.472269,-296.995242,203.759883)">
+        <rect x="491.338583" y="470.314961" width="1824.094488" height="810.289001" style="fill:rgb(232,247,236);"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-4.348379,42.367178)">
+        <text x="66.055046px" y="498.944954px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:21.333333px;">&lt;svg vie<tspan x="144.711046px " y="498.944954px ">w</tspan>Bo<tspan x="188.359046px " y="498.944954px ">x</tspan>=&quot;0 0 540 600&quot; width=&quot;540p<tspan x="472.369713px " y="498.944954px ">x</tspan>&quot;　heigth=&quot;600p<tspan x="648.391046px " y="498.944954px ">x</tspan>&quot; xmlns=&quot;ht<tspan x="775.815046px " y="498.944954px ">t</tspan>p://www<tspan x="870.108379px 875.505713px " y="498.944954px 498.944954px ">.w</tspan>3.<tspan x="910.108379px 923.036379px 931.079046px 944.241713px " y="498.944954px 498.944954px 498.944954px 498.944954px ">org/</tspan>2000/svg&quot;</text>
+        <text x="75.612379px" y="546.944954px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:21.333333px;">s<tspan x="85.127046px " y="546.944954px ">t</tspan>yle=&quot;mar<tspan x="183.921713px " y="546.944954px ">g</tspan>in-left<tspan x="255.431046px " y="546.944954px ">:</tspan> 1310; mar<tspan x="364.017713px " y="546.944954px ">g</tspan>in-<tspan x="401.713713px 409.436379px " y="546.944954px 546.944954px ">to</tspan>p: 270; position: absolut<tspan x="659.932379px " y="546.944954px ">e</tspan>;&quot;&gt;</text>
+        <text x="66.055046px" y="594.944954px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:21.333333px;">&lt;</text>
+        <text x="77.895046px" y="594.944954px" style="font-family:'HaranoAjiGothic-Bold', 'Harano Aji Gothic', sans-serif;font-weight:700;font-size:21.333333px;fill:rgb(0,0,255);">r<tspan x="86.940379px 99.335046px 110.321713px " y="594.944954px 594.944954px 594.944954px ">ect</tspan></text>
+        <g transform="matrix(21.333333,0,0,21.333333,965.980379,594.944954)">
+        </g>
+        <g transform="matrix(21.333333,0,0,21.333333,972.839046,594.944954)">
+        </g>
+        <g transform="matrix(21.333333,0,0,21.333333,990.407046,594.944954)">
+        </g>
+        <g transform="matrix(21.333333,0,0,21.333333,997.340379,594.944954)">
+        </g>
+        <g transform="matrix(21.333333,0,0,21.333333,1087.879046,594.944954)">
+        </g>
+        <g transform="matrix(21.333333,0,0,21.333333,1094.737713,594.944954)">
+        </g>
+        <text x="124.145713px" y="594.944954px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:21.333333px;">x = &quot;10&quot; y = &quot;10&quot; width = &quot;520&quot; height = &quot;580&quot; s<tspan x="580.252379px " y="594.944954px ">t</tspan>yle = &quot;<tspan x="648.327046px 657.841713px 665.884379px 673.927046px 686.855046px 698.204379px 710.257713px " y="594.944954px 594.944954px 594.944954px 594.944954px 594.944954px 594.944954px 594.944954px ">stroke-</tspan>width: 1p<tspan x="810.225713px 821.020379px " y="594.944954px 594.944954px ">x;</tspan> s<tspan x="841.244379px 849.287046px 857.329713px 870.257713px 881.607046px " y="594.944954px 594.944954px 594.944954px 594.944954px 594.944954px ">troke</tspan>: #bbeeﬀ; ﬁll: #bbeeﬀ;&quot; /&gt;</text>
+        <text x="66.055046px" y="642.944954px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:21.333333px;">&lt;</text>
+        <text x="77.895046px" y="642.944954px" style="font-family:'HaranoAjiGothic-Bold', 'Harano Aji Gothic', sans-serif;font-weight:700;font-size:21.333333px;fill:rgb(0,128,0);">ellip<tspan x="123.847046px " y="642.944954px ">s</tspan>e</text>
+        <g transform="matrix(21.333333,0,0,21.333333,907.249713,642.944954)">
+        </g>
+        <g transform="matrix(21.333333,0,0,21.333333,914.108379,642.944954)">
+        </g>
+        <g transform="matrix(21.333333,0,0,21.333333,977.116379,642.944954)">
+        </g>
+        <g transform="matrix(21.333333,0,0,21.333333,984.049713,642.944954)">
+        </g>
+        <g transform="matrix(21.333333,0,0,21.333333,1024.583046,642.944954)">
+        </g>
+        <g transform="matrix(21.333333,0,0,21.333333,1031.441713,642.944954)">
+        </g>
+        <text x="151.580379px" y="642.944954px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:21.333333px;">c<tspan x="162.652379px " y="642.944954px ">x</tspan> = &quot;270&quot; c<tspan x="266.225713px " y="642.944954px ">y</tspan> = &quot;300&quot; rx = &quot;100&quot; r<tspan x="468.977713px " y="642.944954px ">y</tspan> = &quot;100&quot; s<tspan x="571.527046px " y="642.944954px ">t</tspan>yle = &quot;<tspan x="639.601713px 649.116379px 657.159046px 665.201713px 678.129713px 689.479046px 701.532379px " y="642.944954px 642.944954px 642.944954px 642.944954px 642.944954px 642.944954px 642.944954px ">stroke-</tspan>width: 1p<tspan x="801.500379px 812.295046px " y="642.944954px 642.944954px ">x;</tspan> s<tspan x="832.519046px 840.561713px 848.604379px 861.532379px 872.881713px " y="642.944954px 642.944954px 642.944954px 642.944954px 642.944954px ">troke</tspan>: #ﬀ4c4c; ﬁll: #ﬀ4c4c;&quot; /&gt;</text>
+        <g transform="matrix(21.333333,0,0,21.333333,131.228379,690.944954)">
+        </g>
+        <text x="66.055046px" y="690.944954px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:21.333333px;">&lt;/svg&gt;</text>
+    </g>
+    <g transform="matrix(0.32,0,0,0.32,-42.217323,-6.719685)">
+        <g transform="matrix(93.75,0,0,93.75,1207.925935,230.787402)">
+        </g>
+        <text x="282.519685px" y="230.787402px" style="font-family:'HaranoAjiGothic-Bold', 'Harano Aji Gothic', sans-serif;font-weight:700;font-size:93.75px;">docWrit<tspan x="643.832185px " y="230.787402px ">e</tspan>rライブラリ</text>
+    </g>
+    <g transform="matrix(0.32,0,0,0.32,-325.79811,-4.754331)">
+        <text x="3046.299213px" y="224.645669px" style="font-family:'HaranoAjiGothic-Bold', 'Harano Aji Gothic', sans-serif;font-weight:700;font-size:93.75px;">f<tspan x="3080.424213px " y="224.645669px ">s</tspan>xファイル</text>
+        <g transform="matrix(93.75,0,0,93.75,4302.642963,224.645669)">
+        </g>
+        <text x="3554.517963px" y="224.645669px" style="font-family:'HaranoAjiGothic-Bold', 'Harano Aji Gothic', sans-serif;font-weight:700;font-size:93.75px;fill:rgb(255,0,0);">（ユー<tspan x="3833.892963px " y="224.645669px ">ザ</tspan>が記述）</text>
+    </g>
+    <g transform="matrix(0.32,0,0,0.32,-100.532598,26.014213)">
+        <g transform="matrix(93.75,0,0,93.75,724.348671,1397.716535)">
+        </g>
+        <text x="460.629921px" y="1397.716535px" style="font-family:'HaranoAjiGothic-Bold', 'Harano Aji Gothic', sans-serif;font-weight:700;font-size:93.75px;">HTML</text>
+    </g>
+    <path d="M282.955542,167.597844L258.955542,149.597844L282.955542,131.597844L282.955542,167.597844Z"/>
+    <path d="M717.212423,121.880734L717.212423,149.597844L278.155542,149.597844" style="fill:none;stroke:black;stroke-width:4px;"/>
+    <path d="M282.955542,275.562532L258.955542,257.562532L282.955542,239.562532L282.955542,275.562532Z"/>
+    <path d="M637.121358,198.944954L429.597744,198.944954L429.597744,257.562532L278.155542,257.562532" style="fill:none;stroke:black;stroke-width:4px;"/>
+    <g transform="matrix(1,0,0,1.033317,8,-4.984213)">
+        <g transform="matrix(1,-0,-0,0.967757,-8,4.823506)">
+            <path d="M26.192148,517.336046L49.598976,536.100917L25.030788,553.317308L26.192148,517.336046Z"/>
+            <path d="M41.055068,149.597844L8,149.597844L8,534.758235C8,534.758235 19.501412,535.129464 30.40897,535.481525" style="fill:none;stroke:black;stroke-width:4px;"/>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1.03581,0,-9.223424)">
+        <g transform="matrix(1,-0,-0,0.965428,-0,8.904548)">
+            <path d="M25.598976,637.610627L49.598976,655.610627L25.598976,673.610627L25.598976,637.610627Z"/>
+            <path d="M35.304166,257.562532L16.511159,257.562532L16.511159,655.610627L30.398976,655.610627" style="fill:none;stroke:black;stroke-width:4px;"/>
+        </g>
+    </g>
+</svg>

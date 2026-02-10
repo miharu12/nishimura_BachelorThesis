@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="800px" height="300px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,7.224484,-3.256881)">
+        <rect x="0" y="8.257" width="513.491" height="127.523" style="fill:rgb(232,247,236);"/>
+    </g>
+    <g transform="matrix(1,0,0,1.194245,7.224484,132.845687)">
+        <rect x="0" y="8.257" width="513.491" height="127.523" style="fill:rgb(230,240,255);"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-64.931432,-184.980505)">
+        <text x="78.693px" y="350.459px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20.833px;">f<tspan x="84.297px " y="350.459px ">.</tspan>seq {F<tspan x="147.047px 154.568px " y="350.459px 350.459px ">ra</tspan>me<tspan x="196.568px " y="350.459px ">T</tspan>ime=6; F<tspan x="290.235px 297.755px " y="350.459px 350.459px ">ra</tspan>meNumber=100} &lt;| fun s -&gt;</text>
+        <text x="97.36px" y="380.625px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20.833px;">elps1.P {c<tspan x="189.86px " y="380.625px ">e</tspan>nt<tspan x="221.651px " y="380.625px ">e</tspan>r = c<tspan x="272.297px " y="380.625px ">o</tspan>ns<tspan x="306.922px " y="380.625px ">t</tspan>Cent<tspan x="359.86px " y="380.625px ">e</tspan>r</text>
+        <text x="139.36px" y="410.792px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20.833px;">angle1 = fun _ -&gt; I 0</text>
+        <text x="139.36px" y="440.959px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20.833px;">angle2 = fun t -&gt; 360*t<tspan x="350.735px " y="440.959px ">/</tspan>(s.F<tspan x="392.526px 400.047px " y="440.959px 440.959px ">ra</tspan>meNumber<tspan x="521.547px " y="440.959px ">-</tspan>1)</text>
+        <g transform="matrix(20.833333,0,0,20.833333,322.047067,471.125382)">
+        </g>
+        <text x="139.36px" y="471.125px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20.833px;">r<tspan x="146.88px " y="471.125px ">a</tspan>dius = fun _ -&gt; R }</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-119.266055,-30.726682)">
+        <text x="133.028px" y="62.844px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20.833px;">f<tspan x="138.632px " y="62.844px ">.</tspan>seq {F<tspan x="201.382px 208.903px " y="62.844px 62.844px ">ra</tspan>me<tspan x="250.903px " y="62.844px ">T</tspan>ime=6; F<tspan x="344.569px 352.09px " y="62.844px 62.844px ">ra</tspan>meNumber=500} &lt;| fun s -&gt;</text>
+        <text x="151.694px" y="93.011px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20.833px;">line1.P {S<tspan x="241.694px 249.048px " y="93.011px 93.011px ">ta</tspan>rt = c<tspan x="307.736px " y="93.011px ">o</tspan>ns<tspan x="342.361px " y="93.011px ">t</tspan>Cent<tspan x="395.298px " y="93.011px ">e</tspan>r</text>
+        <text x="193.694px" y="123.177px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20.833px;">End = {X = fun t -&gt; c<tspan x="375.944px " y="123.177px ">x</tspan> + R<tspan x="420.215px 429.944px 438.028px " y="123.177px 123.177px 123.177px ">*t/</tspan>(s.F<tspan x="479.819px 487.34px " y="123.177px 123.177px ">ra</tspan>meNumber<tspan x="608.84px " y="123.177px ">-</tspan>1)</text>
+        <g transform="matrix(20.833333,0,0,20.833333,375.25669,153.344037)">
+        </g>
+        <text x="226.361px" y="153.344px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:20.833px;">Y = fun _ -&gt; c<tspan x="345.653px " y="153.344px ">y</tspan> }}</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-4.962294,10.450291)">
+        <g transform="matrix(30,0,0,30,664.518588,69.724771)">
+        </g>
+        <text x="544.519px" y="69.725px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:30px;">破線描画</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-18.748899,32.078464)">
+        <g transform="matrix(30,0,0,30,676.445194,198.165138)">
+        </g>
+        <text x="556.445px" y="198.165px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:30px;">円弧描画</text>
+    </g>
+</svg>

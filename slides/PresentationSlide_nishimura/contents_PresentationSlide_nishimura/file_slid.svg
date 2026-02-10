@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 5375 2587" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1.204351,0,0,1.427999,1911.011692,655.682084)">
+        <rect x="491.339" y="470.315" width="1824.094" height="810.289" style="fill:rgb(232,247,236);"/>
+    </g>
+    <g transform="matrix(1,0,0,1.22938,6.141732,-529.352024)">
+        <rect x="2616.378" y="1674.094" width="1695.118" height="706.299" style="fill:rgb(189,228,204);"/>
+    </g>
+    <g transform="matrix(1.238021,0,0,1.394143,1833.050982,-584.584146)">
+        <rect x="491.339" y="470.315" width="1824.094" height="810.289" style="fill:rgb(230,240,255);"/>
+    </g>
+    <g transform="matrix(1.204351,0,0,1.394143,-498.429007,-584.584146)">
+        <rect x="491.339" y="470.315" width="1824.094" height="810.289" style="fill:rgb(230,240,255);"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-498.148376,89.25)">
+        <g transform="matrix(93.75,0,0,93.75,4620,1999.606299)">
+        </g>
+        <text x="3120px" y="1999.606px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:93.75px;">（時間に応じた座標・寸法の変化）</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-227.454478,174.659203)">
+        <g transform="matrix(93.75,0,0,93.75,4024.649852,1723.228346)">
+        </g>
+        <text x="2911.181px" y="1723.228px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:93.75px;">Jav<tspan x="3060.9px " y="1723.228px ">a</tspan>Scrip<tspan x="3335.869px " y="1723.228px ">t</tspan>によ<tspan x="3555.9px " y="1723.228px ">る</tspan>動作制御</text>
+    </g>
+    <g transform="matrix(1.204351,0,0,1.427999,-498.429007,655.682084)">
+        <rect x="491.339" y="470.315" width="1824.094" height="810.289" style="fill:rgb(232,247,236);"/>
+    </g>
+    <g transform="matrix(1.192635,0,0,1,-383.849568,0)">
+        <g transform="matrix(0.83848,-0,-0,1,321.850113,-0)">
+            <path d="M1383.189,805.804L1308.189,749.554L1383.189,693.304L1383.189,805.804Z"/>
+            <path d="M2601.024,749.554L1368.189,749.554" style="fill:none;stroke:black;stroke-width:12.5px;"/>
+        </g>
+    </g>
+    <path d="M774.833,1685.079L718.583,1760.079L662.333,1685.079L774.833,1685.079Z"/>
+    <path d="M718.583,986.22L718.583,1700.079" style="fill:none;stroke:black;stroke-width:12.5px;"/>
+    <path d="M2526.024,1806.24L2601.024,1862.49L2526.024,1918.74L2526.024,1806.24Z"/>
+    <path d="M1001.102,1862.49L2541.024,1862.49" style="fill:none;stroke:black;stroke-width:12.5px;"/>
+    <g transform="matrix(1,0,0,1,-162.512303,22.139764)">
+        <g transform="matrix(93.75,0,0,93.75,2003.89001,2067.165354)">
+        </g>
+        <text x="429.921px" y="2067.165px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:93.75px;">（SV<tspan x="632.421px " y="2067.165px ">G</tspan>によ<tspan x="881.703px " y="2067.165px ">る</tspan>図形・テキ<tspan x="1441.39px " y="2067.165px ">ス</tspan>トの配置）</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-128.976378,-24.566929)">
+        <g transform="matrix(93.75,0,0,93.75,1207.925935,230.787402)">
+        </g>
+        <text x="282.52px" y="230.787px" style="font-family:'HaranoAjiGothic-Bold', 'Harano Aji Gothic', sans-serif;font-weight:700;font-size:93.75px;">docWrit<tspan x="643.832px " y="230.787px ">e</tspan>rライブラリ</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-547.293307,-18.425197)">
+        <text x="3046.299px" y="224.646px" style="font-family:'HaranoAjiGothic-Bold', 'Harano Aji Gothic', sans-serif;font-weight:700;font-size:93.75px;">f<tspan x="3080.424px " y="224.646px ">s</tspan>xファイル</text>
+        <g transform="matrix(93.75,0,0,93.75,4208.892963,224.645669)">
+        </g>
+        <text x="3554.518px" y="224.646px" style="font-family:'HaranoAjiGothic-Bold', 'Harano Aji Gothic', sans-serif;font-weight:700;font-size:93.75px;fill:rgb(255,0,0);">（ユー<tspan x="3833.893px " y="224.646px ">ザ</tspan>記述）</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-311.211614,77.726501)">
+        <g transform="matrix(93.75,0,0,93.75,724.348671,1397.716535)">
+        </g>
+        <text x="460.63px" y="1397.717px" style="font-family:'HaranoAjiGothic-Bold', 'Harano Aji Gothic', sans-serif;font-weight:700;font-size:93.75px;">HTML</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-594.767717,-34.555733)">
+        <g transform="matrix(93.75,0,0,93.75,3665.681841,1489.84252)">
+        </g>
+        <text x="3175.276px" y="1489.843px" style="font-family:'HaranoAjiGothic-Bold', 'Harano Aji Gothic', sans-serif;font-weight:700;font-size:93.75px;">Jav<tspan x="3335.776px " y="1489.843px ">a</tspan>Scrip<tspan x="3626.213px " y="1489.843px ">t</tspan></text>
+    </g>
+    <g transform="matrix(1,0,0,1,1252.913386,-264.094488)">
+        <text x="3734.173px" y="918.661px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:93.75px;">コード</text>
+        <g transform="matrix(93.75,0,0,93.75,3921.673228,1054.411417)">
+        </g>
+        <text x="3734.173px" y="1054.411px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:93.75px;">生成</text>
+    </g>
+    <g transform="matrix(1,0,0,1,927.440699,423.779528)">
+        <g transform="matrix(93.75,0,0,93.75,4290.177165,1594.251969)">
+        </g>
+        <text x="4102.677px" y="1594.252px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:93.75px;">実行</text>
+    </g>
+    <g transform="matrix(0,2.220886,-1.206333,0,5146.867002,-2629.46974)">
+        <path d="M1323.124,257.379L1323.124,190.426L1614.633,190.426L1614.633,128.255L1666.586,223.902L1614.633,319.55L1614.633,257.379L1323.124,257.379Z" style="fill:white;stroke:black;stroke-width:6.99px;"/>
+    </g>
+    <g transform="matrix(0,2.220886,-1.206333,0,5146.867002,-1337.413376)">
+        <path d="M1323.124,257.379L1323.124,190.426L1614.633,190.426L1614.633,128.255L1666.586,223.902L1614.633,319.55L1614.633,257.379L1323.124,257.379Z" style="fill:white;stroke:black;stroke-width:6.99px;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-229.659449,137.719454)">
+        <g transform="matrix(93.75,0,0,93.75,1179.193406,1760.07874)">
+        </g>
+        <text x="552.756px" y="1760.079px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:93.75px;">HTML生成処理</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-3.307087,87.078825)">
+        <text x="331.654px" y="562.441px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:93.75px;">• <tspan x="406.654px " y="562.441px ">型</tspan>定義</text>
+        <text x="331.654px" y="698.191px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:93.75px;">• <tspan x="406.654px " y="698.191px ">関</tspan>数定義</text>
+        <g transform="matrix(93.75,0,0,93.75,1247.591043,833.940945)">
+        </g>
+        <text x="331.654px" y="833.941px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:93.75px;">• <tspan x="406.654px " y="833.941px ">フ</tspan>レー<tspan x="685.091px " y="833.941px ">ム</tspan>ワーク本体</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-44.14001,68.432436)">
+        <text x="2726.929px" y="580.866px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:93.75px;">• <tspan x="2801.929px " y="580.866px ">コ</tspan>ンテンツの設定</text>
+        <text x="2726.929px" y="716.616px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:93.75px;">• <tspan x="2801.929px " y="716.616px ">図</tspan>形の設定</text>
+        <g transform="matrix(93.75,0,0,93.75,3735.679134,852.366142)">
+        </g>
+        <text x="2726.929px" y="852.366px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:93.75px;">• <tspan x="2801.929px 2893.804px " y="852.366px 852.366px ">アニ</tspan>メー<tspan x="3173.179px " y="852.366px ">シ</tspan>ョンの流れ</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-2359.948081,436.252707)">
+        <g transform="matrix(93.75,0,0,93.75,5328.299705,1188.897638)">
+        </g>
+        <text x="5042.362px" y="1188.898px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:93.75px;">〇〇.<tspan x="5258.643px " y="1188.898px ">j</tspan>s</text>
+    </g>
+    <path d="M2850.738,1744.01L2794.488,1819.01L2738.238,1744.01L2850.738,1744.01Z"/>
+    <path d="M1019.528,986.22L1019.528,1667.953L2794.488,1667.953L2794.488,1759.01" style="fill:none;stroke:black;stroke-width:12.5px;"/>
+</svg>

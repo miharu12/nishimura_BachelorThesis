@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>
+PresentationSlide_nishimura
+</title>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script type="text/javascript" src="contents_PresentationSlide_nishimura/animationSeq.js">
+</script>
+<script type="text/javascript" src="contents_PresentationSlide_nishimura/animationSeqReset.js">
+</script>
+<script type="text/javascript" src="contents_PresentationSlide_nishimura/animationStart.js">
+</script>
+<script type="text/javascript" src="contents_PresentationSlide_nishimura/animationReset.js">
+</script>
+<script>
+const audioList = [
+    "contents_PresentationSlide_nishimura/008-scripts_台詞_D.wav",
+    "contents_PresentationSlide_nishimura/0076-scripts_台詞_T.wav",
+    "contents_PresentationSlide_nishimura/0076-scripts_台詞_T.wav",
+    "contents_PresentationSlide_nishimura/0076-scripts_台詞_T.wav",
+    "contents_PresentationSlide_nishimura/0076-scripts_台詞_T.wav",
+    "contents_PresentationSlide_nishimura/0076-scripts_台詞_T.wav",
+    "contents_PresentationSlide_nishimura/0076-scripts_台詞_T.wav",
+    "contents_PresentationSlide_nishimura/0076-scripts_台詞_T.wav",
+    "contents_PresentationSlide_nishimura/0076-scripts_台詞_T.wav",
+    "contents_PresentationSlide_nishimura/0076-scripts_台詞_T.wav",
+    "contents_PresentationSlide_nishimura/",
+    "contents_PresentationSlide_nishimura/0-中間発表T01.wav",
+    "contents_PresentationSlide_nishimura/0-中間発表D01.wav"
+];
+let pagecount = 1;
+function setCharacter()
+{
+        const swc = document.getElementById("switchCharacter");
+        const c = document.getElementById("c"+pagecount);
+        if(swc.checked)
+        {
+            c.style.display = "block";
+        }
+        else
+        {
+            c.style.display = "none";
+        }
+}
+function setSubtitle()
+{
+        const sws = document.getElementById("switchSubtitle");
+        const b2 = document.getElementById("sb"+pagecount);
+        const s2 = document.getElementById("s"+pagecount);
+        if(sws.checked)
+        {
+            b2.style.display = "block";
+            s2.style.display = "block";
+        }
+        else
+        {
+            b2.style.display = "none";
+            s2.style.display = "none";
+        }
+}
+function drawNext()
+{
+    resetAll();
+    if(pagecount<13)
+    {
+        const swc = document.getElementById("switchCharacter");
+        const sws = document.getElementById("switchSubtitle");
+        const swa = document.getElementById("switchAudio");
+        
+        const p1 = document.getElementById("p"+pagecount);
+        p1.style.display = "none";
+        const b1 = document.getElementById("sb"+pagecount);
+        b1.style.display = "none";
+        const s1 = document.getElementById("s"+pagecount);
+        s1.style.display = "none";
+        const c1 = document.getElementById("c"+pagecount);
+        c1.style.display = "none";
+        pagecount++;
+        const p2 = document.getElementById("p"+pagecount);
+        p2.style.display = "block";
+        if(sws.checked)
+        {
+            const b2 = document.getElementById("sb"+pagecount);
+            b2.style.display = "block";
+            const s2 = document.getElementById("s"+pagecount);
+            s2.style.display = "block";
+        }
+        else
+        {
+            const b2 = document.getElementById("sb"+pagecount);
+            b2.style.display = "none";
+            const s2 = document.getElementById("s"+pagecount);
+            s2.style.display = "none";
+        }
+        if(swc.checked)
+        {
+            const c2 = document.getElementById("c"+pagecount);
+            c2.style.display = "block";
+        }
+        else
+        {
+            const c2 = document.getElementById("c"+pagecount);
+            c2.style.display = "none";
+        }
+        const audioPlayer = document.getElementById("audioPlayer");
+        if(audioList[pagecount-1] != "" && swa.checked)
+        {
+            audioPlayer.src = audioList[pagecount-1];
+            audioPlayer.play();
+        }
+    }
+}
+function drawPrev()
+{
+    resetAll();
+    if(pagecount>1)
+    {
+        const swc = document.getElementById("switchCharacter");
+        const sws = document.getElementById("switchSubtitle");
+        const swa = document.getElementById("switchAudio");
+        const p1 = document.getElementById("p"+pagecount);
+        p1.style.display = "none";
+        const b1 = document.getElementById("sb"+pagecount);
+        b1.style.display = "none";
+        const s1 = document.getElementById("s"+pagecount);
+        s1.style.display = "none";
+        const c1 = document.getElementById("c"+pagecount);
+        c1.style.display = "none";
+        pagecount--;
+        const p2 = document.getElementById("p"+pagecount);
+        p2.style.display = "block";
+        if(sws.checked)
+        {
+            const b2 = document.getElementById("sb"+pagecount);
+            b2.style.display = "block";
+            const s2 = document.getElementById("s"+pagecount);
+            s2.style.display = "block";
+        }
+        else
+        {
+            const b2 = document.getElementById("sb"+pagecount);
+            b2.style.display = "none";
+            const s2 = document.getElementById("s"+pagecount);
+            s2.style.display = "none";
+        }
+        if(swc.checked)
+        {
+            const c2 = document.getElementById("c"+pagecount);
+            c2.style.display = "block";
+        }
+        else
+        {
+            const c2 = document.getElementById("c"+pagecount);
+            c2.style.display = "none";
+        }
+        const audioPlayer = document.getElementById("audioPlayer");
+        if(audioList[pagecount-1] != "" && swa.checked)
+        {
+            audioPlayer.src = audioList[pagecount-1];
+            audioPlayer.play();
+        }
+    }
+}
+
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body style = "background-color: #aaaaaa;" >
+<div style = "background-color: #ffffff; margin-left: auto; margin-right: auto; width: 1920px; height: 1080px;" >
+<div id="p1" style="display: block; position: absolute;">
+<div id = "sb1" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 1; margin-top: 880px; padding: 20px; background-color: #aaaaff; font-family: 'Noto Sans JP'; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ";>
+</div>
+<div id = "c1"style="display: none; ">
+<img src="contents_PresentationSlide_nishimura/テール右斜AAA-.png" style="position: absolute; margin-left: 0px; margin-top: -122px; width: 850px; object-position: right 204px top 426px; z-index: 2;" />
+<img src="contents_PresentationSlide_nishimura/dango.png" style="position: absolute; margin-left: 1462px; margin-top: 727px; width: 450px; z-index: 3;" />
+</div>
+<div id = "s1" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 5; margin-top: 880px; padding: 20px; font-family: 'Noto Sans JP'; color: #455eff; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ;">
+
+</div>
+<div style="width: 1920px; height: 880px; position: absolute; z-index: 0;">
+<div style = "margin-left: 100px; margin-top: 350px; position: absolute; font-family: 'Noto Sans JP'; color: black; font-weight: bold; white-space: nowrap; font-size: 90px;" >
+数値解析用プログラミング言語と連動した
+</div>
+<div style = "margin-left: 100px; margin-top: 440px; position: absolute; font-family: 'Noto Sans JP'; color: black; font-weight: bold; white-space: nowrap; font-size: 90px;" >
+アニメーション図説フレームワークの開発
+</div>
+<div style = "margin-left: 1250px; margin-top: 900px; position: absolute; font-size: 30px;" >
+情報デザイン・コミュニケーション工学コース
+</div>
+<div style = "margin-left: 1250px; margin-top: 950px; position: absolute; font-size: 30px;" >
+数理波動システム研究室　　　西村　美春
+
+</div>
+</div>
+</div>
+<div id="p2" style="display: none; position: absolute;">
+<div id = "sb2" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 1; margin-top: 880px; padding: 20px; background-color: #aaaaff; font-family: 'Noto Sans JP'; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ";>
+</div>
+<div id = "c2"style="display: none; ">
+<img src="contents_PresentationSlide_nishimura/テール右斜AAA-.png" style="position: absolute; margin-left: 0px; margin-top: -122px; width: 850px; object-position: right 204px top 426px; z-index: 2;" />
+<img src="contents_PresentationSlide_nishimura/dango.png" style="position: absolute; margin-left: 1462px; margin-top: 727px; width: 450px; z-index: 3;" />
+</div>
+<div id = "s2" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 5; margin-top: 880px; padding: 20px; font-family: 'Noto Sans JP'; color: #d11aff; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ;">
+
+</div>
+<div style="width: 1920px; height: 880px; position: absolute; z-index: 0;">
+<div style = "margin-left: 1860px; margin-top: 10px; position: absolute; font-size: 40px;" >
+2
+</div>
+<div style = "margin-left: 50px; margin-top: 50px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 25px; border-left-color: #1e6eff; padding-left: 10px;" >
+研究背景
+</div>
+<div style = "margin-left: 100px; margin-top: 150px; position: absolute; font-size: 30px;" >
+数値解析プログラムのコードを流用して、プレゼンテーション資料を効率的に作成する
+</div>
+<div style = "margin-left: 80px; margin-top: 250px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+既存のプレゼンテーションツール
+</div>
+<div style = "margin-left: 960px; margin-top: 250px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+既存のアニメーションツール
+</div>
+<div style = "margin-left: 100px; margin-top: 350px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 30px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #1e6eff; padding-left: 10px; display: inline-block;" >
+PowerPoint
+</div>
+<div style = "margin-left: 980px; margin-top: 350px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 30px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #1e6eff; padding-left: 10px; display: inline-block;" >
+Manim
+</div>
+<div style = "margin-left: 980px; margin-top: 650px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 30px; border-bottom-style: solid; border-bottom-width: 3px; border-bottom-color: #1e6eff; padding-left: 10px; padding-right: 10px; display: inline-block;" >
+問題点
+</div>
+<div style = "margin-left: 120px; margin-top: 400px; position: absolute; font-size: 30px;" >
+・正確な図の作成が困難
+</div>
+<div style = "margin-left: 120px; margin-top: 450px; position: absolute; font-size: 30px;" >
+・マウス操作でコンテンツの配置
+</div>
+<div style = "margin-left: 120px; margin-top: 500px; position: absolute; font-size: 30px;" >
+・同じようなコンテンツやアニメーションでも個別に
+</div>
+<div style = "margin-left: 120px; margin-top: 550px; position: absolute; font-size: 30px;" >
+　作成が必要（流用しにくい）
+</div>
+<div style = "margin-left: 1000px; margin-top: 400px; position: absolute; font-size: 30px;" >
+数式やグラフをアニメーションとして動画化
+</div>
+<div style = "margin-left: 120px; margin-top: 500px; width: 1750px; height: 500px; background-color: #ffffff;" >
+<svg viewBox="0 0 550 455.5291427061512" width="550px" heigth="455.5291427061512px" xmlns="http://www.w3.org/2000/svg" style="margin-left: 1000; margin-top: 32.23542864692439; position: absolute;">
+<line x1 = "110" y1 = "17.76457135307561" x2 = "210" y2 = "17.76457135307561" style = "stroke: #000000;" />
+<polygon points = "191.02222521132785,25.529142706151227 220,17.76457135307561 191.02222521132785,10" style = "stroke: #000000;" />
+<line x1 = "420" y1 = "17.76457135307561" x2 = "530" y2 = "17.76457135307561" style = "stroke: #000000;" />
+<polygon points = "511.02222521132785,25.529142706151227 540,17.76457135307561 511.02222521132785,10" style = "stroke: #000000;" />
+<line x1 = "180" y1 = "267.7645713530756" x2 = "520" y2 = "267.7645713530756" style = "stroke: #000000;" />
+<polygon points = "501.02222521132785,275.5291427061512 530,267.7645713530756 501.02222521132785,260" style = "stroke: #000000;" />
+<line x1 = "280" y1 = "217.7645713530756" x2 = "430" y2 = "317.7645713530756" style = "stroke-width: 3px; stroke: #000000; fill: #000000;" />
+<line x1 = "280" y1 = "317.7645713530756" x2 = "430" y2 = "217.7645713530756" style = "stroke-width: 3px; stroke: #000000; fill: #000000;" />
+<line x1 = "10" y1 = "317.7645713530756" x2 = "10" y2 = "437.7645713530756" style = "stroke-width: 1px; stroke: #000000; fill: #000000;" />
+<line x1 = "10" y1 = "437.7645713530756" x2 = "220" y2 = "437.7645713530756" style = "stroke: #000000;" />
+<polygon points = "201.02222521132785,445.5291427061512 230,437.7645713530756 201.02222521132785,430" style = "stroke: #000000;" />
+<line x1 = "400" y1 = "437.7645713530756" x2 = "520" y2 = "437.7645713530756" style = "stroke: #000000;" />
+<polygon points = "501.02222521132785,445.5291427061512 530,437.7645713530756 501.02222521132785,430" style = "stroke: #000000;" />
+</svg>
+<div style = "margin-left: 880px; margin-top: 0px; position: absolute; font-size: 30px;" >
+Pythonコード
+</div>
+<div style = "margin-left: 860px; margin-top: 50px; position: absolute; font-size: 30px;" >
+（数式・グラフ）
+</div>
+<div style = "margin-left: 1270px; margin-top: 0px; position: absolute; font-size: 30px;" >
+Manim
+</div>
+<div style = "margin-left: 1230px; margin-top: 50px; position: absolute; font-size: 30px;" >
+（アニメ化）
+</div>
+<div style = "margin-left: 1572px; margin-top: 0px; position: absolute; font-size: 30px;" >
+動画ファイル
+</div>
+<div style = "margin-left: 1572px; margin-top: 50px; position: absolute; font-size: 30px;" >
+（mp4など）
+</div>
+<div style = "margin-left: 880px; margin-top: 250px; position: absolute; font-size: 30px;" >
+数値解析プログラム
+</div>
+<div style = "margin-left: 880px; margin-top: 300px; position: absolute; font-size: 30px; color: #ff0000;" >
+　　C・Fortran
+</div>
+<div style = "margin-left: 1550px; margin-top: 275px; position: absolute; font-size: 30px;" >
+アニメーション
+</div>
+<div style = "margin-left: 1260px; margin-top: 420px; position: absolute; font-size: 30px;" >
+書き直し
+</div>
+<div style = "margin-left: 1260px; margin-top: 470px; position: absolute; font-size: 30px; color: #ff0000;" >
+python
+</div>
+<div style = "margin-left: 1550px; margin-top: 445px; position: absolute; font-size: 30px;" >
+アニメーション
+</div>
+<img style = "margin-left: 0px; margin-top: 150px; height: 380px;" src = "contents_PresentationSlide_nishimura\PowerPoint１.png" />
+</div>
+</div>
+</div>
+<div id="p3" style="display: none; position: absolute;">
+<div id = "sb3" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 1; margin-top: 880px; padding: 20px; background-color: #aaaaff; font-family: 'Noto Sans JP'; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ";>
+</div>
+<div id = "c3"style="display: none; ">
+<img src="contents_PresentationSlide_nishimura/テール右斜AAA-.png" style="position: absolute; margin-left: 0px; margin-top: -122px; width: 850px; object-position: right 204px top 426px; z-index: 2;" />
+<img src="contents_PresentationSlide_nishimura/dango.png" style="position: absolute; margin-left: 1462px; margin-top: 727px; width: 450px; z-index: 3;" />
+</div>
+<div id = "s3" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 5; margin-top: 880px; padding: 20px; font-family: 'Noto Sans JP'; color: #d11aff; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ;">
+
+</div>
+<div style="width: 1920px; height: 880px; position: absolute; z-index: 0;">
+<div style = "margin-left: 1860px; margin-top: 10px; position: absolute; font-size: 40px;" >
+3
+</div>
+<div style = "margin-left: 50px; margin-top: 50px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 25px; border-left-color: #1e6eff; padding-left: 10px;" >
+解決策
+</div>
+<div style = "margin-left: 100px; margin-top: 150px; width: 1720px; height: 880px; background-color: #ffffff;" >
+<svg viewBox="0 0 1020 812.8703998943059" width="1020px" heigth="812.8703998943059px" xmlns="http://www.w3.org/2000/svg" style="margin-left: 140; margin-top: 16.894171458769755; position: absolute;">
+<line x1 = "360" y1 = "16.105828541230245" x2 = "478" y2 = "16.105828541230245" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "468.4088900845312,19.21165708246049 480,16.105828541230245 468.4088900845312,13" style = "stroke: #000000;" />
+<line x1 = "360" y1 = "145.10582854123024" x2 = "528" y2 = "145.10582854123024" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "518.4088900845312,148.21165708246048 530,145.10582854123024 518.4088900845312,142" style = "stroke: #000000;" />
+<line x1 = "360" y1 = "277.10582854123027" x2 = "478" y2 = "277.10582854123027" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "468.4088900845312,280.21165708246053 480,277.10582854123027 468.4088900845312,274" style = "stroke: #000000;" />
+<line x1 = "260" y1 = "409.10582854123027" x2 = "478" y2 = "409.10582854123027" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "468.4088900845312,412.21165708246053 480,409.10582854123027 468.4088900845312,406" style = "stroke: #000000;" />
+<line x1 = "260" y1 = "541.1058285412303" x2 = "478" y2 = "541.1058285412303" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "468.4088900845312,544.2116570824605 480,541.1058285412303 468.4088900845312,538" style = "stroke: #000000;" />
+<line x1 = "260" y1 = "673.1058285412303" x2 = "478" y2 = "673.1058285412303" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "468.4088900845312,676.2116570824605 480,673.1058285412303 468.4088900845312,670" style = "stroke: #000000;" />
+<line x1 = "260" y1 = "795.1058285412303" x2 = "475" y2 = "795.1058285412303" style = "stroke: #ff0000; fill: #ff0000;" />
+<polygon points = "451.02222521132796,802.8703998943059 480,795.1058285412303 451.02222521132796,787.3412571881546" style = "stroke: #ff0000; fill: #ff0000;" />
+<line x1 = "260" y1 = "795.1058285412303" x2 = "475" y2 = "795.1058285412303" style = "stroke: #ff0000; fill: #ff0000; stroke-width: 5px;" />
+<polygon points = "468.4088900845312,798.2116570824605 480,795.1058285412303 468.4088900845312,792" style = "stroke: #ff0000; fill: #ff0000;" />
+<line x1 = "360" y1 = "13.105828541230245" x2 = "360" y2 = "277.10582854123027" style = "stroke-width: 2px; stroke: #000000; fill: #000000;" />
+<line x1 = "260" y1 = "206.10582854123024" x2 = "360" y2 = "206.10582854123024" style = "stroke-width: 2px; stroke: #000000; fill: #000000;" />
+<line x1 = "260" y1 = "206.10582854123024" x2 = "260" y2 = "409.10582854123027" style = "stroke-width: 2px; stroke: #000000; fill: #000000;" />
+<line x1 = "10" y1 = "409.10582854123027" x2 = "260" y2 = "409.10582854123027" style = "stroke-width: 5px; stroke: #ff0000; fill: #ff0000;" />
+<line x1 = "260" y1 = "408.10582854123027" x2 = "260" y2 = "798.1058285412303" style = "stroke-width: 5px; stroke: #ff0000; fill: #ff0000;" />
+<line x1 = "670" y1 = "13.105828541230245" x2 = "1008" y2 = "13.105828541230245" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "998.4088900845311,16.21165708246049 1010,13.105828541230245 998.4088900845311,10" style = "stroke: #000000;" />
+<line x1 = "910" y1 = "211.10582854123024" x2 = "1008" y2 = "211.10582854123024" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "998.4088900845311,214.21165708246048 1010,211.10582854123024 998.4088900845311,208" style = "stroke: #000000;" />
+<line x1 = "910" y1 = "475.10582854123027" x2 = "1008" y2 = "475.10582854123027" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "998.4088900845311,478.21165708246053 1010,475.10582854123027 998.4088900845311,472" style = "stroke: #000000;" />
+<line x1 = "640" y1 = "673.1058285412303" x2 = "1008" y2 = "673.1058285412303" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "998.4088900845311,676.2116570824605 1010,673.1058285412303 998.4088900845311,670" style = "stroke: #000000;" />
+<line x1 = "760" y1 = "795.1058285412303" x2 = "1005" y2 = "795.1058285412303" style = "stroke: #ff0000; fill: #ff0000;" />
+<polygon points = "981.0222252113279,802.8703998943059 1010,795.1058285412303 981.0222252113279,787.3412571881546" style = "stroke: #ff0000; fill: #ff0000;" />
+<line x1 = "760" y1 = "795.1058285412303" x2 = "1005" y2 = "795.1058285412303" style = "stroke: #ff0000; fill: #ff0000; stroke-width: 5px;" />
+<polygon points = "998.4088900845311,798.2116570824605 1010,795.1058285412303 998.4088900845311,792" style = "stroke: #ff0000; fill: #ff0000;" />
+<line x1 = "910" y1 = "145.10582854123024" x2 = "910" y2 = "277.10582854123027" style = "stroke-width: 2px; stroke: #000000; fill: #000000;" />
+<line x1 = "620" y1 = "145.10582854123024" x2 = "910" y2 = "145.10582854123024" style = "stroke-width: 2px; stroke: #000000; fill: #000000;" />
+<line x1 = "670" y1 = "277.10582854123027" x2 = "910" y2 = "277.10582854123027" style = "stroke-width: 2px; stroke: #000000; fill: #000000;" />
+<line x1 = "910" y1 = "409.10582854123027" x2 = "910" y2 = "541.1058285412303" style = "stroke-width: 2px; stroke: #000000; fill: #000000;" />
+<line x1 = "660" y1 = "409.10582854123027" x2 = "910" y2 = "409.10582854123027" style = "stroke-width: 2px; stroke: #000000; fill: #000000;" />
+<line x1 = "640" y1 = "541.1058285412303" x2 = "910" y2 = "541.1058285412303" style = "stroke-width: 2px; stroke: #000000; fill: #000000;" />
+</svg>
+<div style = "margin-left: 0px; margin-top: 396px; position: absolute; font-size: 40px;" >
+Aqualis
+</div>
+<div style = "margin-left: 660px; margin-top: 0px; position: absolute; font-size: 40px;" >
+Python
+</div>
+<div style = "margin-left: 700px; margin-top: 132px; position: absolute; font-size: 40px;" >
+C
+</div>
+<div style = "margin-left: 660px; margin-top: 264px; position: absolute; font-size: 40px;" >
+Fortran
+</div>
+<div style = "margin-left: 660px; margin-top: 396px; position: absolute; font-size: 40px;" >
+HTML
+</div>
+<div style = "margin-left: 660px; margin-top: 528px; position: absolute; font-size: 40px;" >
+Latex
+</div>
+<div style = "margin-left: 660px; margin-top: 660px; position: absolute; font-size: 40px;" >
+SVG
+</div>
+<div style = "margin-left: 660px; margin-top: 762px; position: absolute; font-size: 40px; color: #ff0000;" >
+HTML
+</div>
+<div style = "margin-left: 660px; margin-top: 802px; position: absolute; font-size: 40px; color: #ff0000;" >
+JavaScript
+</div>
+<div style = "margin-left: 1200px; margin-top: 0px; position: absolute; font-size: 40px;" >
+実行結果
+</div>
+<div style = "margin-left: 1200px; margin-top: 198px; position: absolute; font-size: 40px;" >
+数値解析
+</div>
+<div style = "margin-left: 1200px; margin-top: 462px; position: absolute; font-size: 40px;" >
+文書
+</div>
+<div style = "margin-left: 1200px; margin-top: 660px; position: absolute; font-size: 40px;" >
+図・グラフ
+</div>
+<div style = "margin-left: 1200px; margin-top: 762px; position: absolute; font-size: 40px; color: #ff0000;" >
+プレゼンテーション
+</div>
+<div style = "margin-left: 1160px; margin-top: 802px; position: absolute; font-size: 40px; color: #ff0000;" >
+（アニメーション、音声付き）
+</div>
+<div style = "margin-left: 220px; margin-top: 363px; position: absolute; font-size: 40px;" >
+変換
+</div>
+<div style = "margin-left: 660px; margin-top: 213px; position: absolute; font-size: 30px; color: #ff0000;" >
+実行が速い
+</div>
+</div>
+</div>
+</div>
+<div id="p4" style="display: none; position: absolute;">
+<div id = "sb4" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 1; margin-top: 880px; padding: 20px; background-color: #aaaaff; font-family: 'Noto Sans JP'; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ";>
+</div>
+<div id = "c4"style="display: none; ">
+<img src="contents_PresentationSlide_nishimura/テール右斜AAA-.png" style="position: absolute; margin-left: 0px; margin-top: -122px; width: 850px; object-position: right 204px top 426px; z-index: 2;" />
+<img src="contents_PresentationSlide_nishimura/dango.png" style="position: absolute; margin-left: 1462px; margin-top: 727px; width: 450px; z-index: 3;" />
+</div>
+<div id = "s4" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 5; margin-top: 880px; padding: 20px; font-family: 'Noto Sans JP'; color: #d11aff; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ;">
+
+</div>
+<div style="width: 1920px; height: 880px; position: absolute; z-index: 0;">
+<div style = "margin-left: 1860px; margin-top: 10px; position: absolute; font-size: 40px;" >
+4
+</div>
+<div style = "margin-left: 50px; margin-top: 50px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 25px; border-left-color: #1e6eff; padding-left: 10px;" >
+研究目的
+</div>
+<div style = "margin-left: 80px; margin-top: 150px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+数値解析用プログラミング言語（Aqualis）と共通のコードでスライドを作成
+</div>
+<div style = "margin-left: 80px; margin-top: 250px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 30px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #1e6eff; padding-left: 10px; display: inline-block;" >
+図形の描画
+</div>
+<div style = "margin-left: 960px; margin-top: 250px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 30px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #1e6eff; padding-left: 10px; display: inline-block;" >
+波形などのアニメーションを簡単描画
+</div>
+<svg viewBox="0 0 800 680" 
+width="800px" 
+heigth="680px" 
+xmlns="http://www.w3.org/2000/svg" 
+style="margin-left: 1040; 
+margin-top: 350; 
+position: absolute;
+background-color: #bbeeff;
+">
+<line id = "contentsID0" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID1" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID2" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID3" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID4" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID5" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID6" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID7" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID8" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID9" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID10" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID11" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID12" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID13" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID14" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID15" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID16" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID17" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID18" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID19" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID20" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID21" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID22" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID23" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID24" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID25" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID26" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID27" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID28" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID29" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID30" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID31" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID32" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID33" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID34" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID35" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID36" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID37" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID38" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID39" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID40" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID41" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID42" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID43" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID44" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID45" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID46" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID47" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID48" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID49" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID50" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID51" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID52" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID53" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID54" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID55" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID56" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID57" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID58" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID59" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID60" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID61" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID62" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID63" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID64" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID65" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID66" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID67" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID68" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID69" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID70" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID71" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID72" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID73" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID74" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID75" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID76" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID77" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID78" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID79" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID80" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID81" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID82" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID83" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID84" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID85" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID86" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID87" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID88" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID89" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID90" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID91" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID92" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID93" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID94" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID95" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID96" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID97" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID98" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID99" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID100" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID101" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID102" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID103" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID104" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID105" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID106" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID107" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID108" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID109" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID110" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID111" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID112" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID113" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID114" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID115" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID116" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID117" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID118" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID119" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID120" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID121" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID122" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID123" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID124" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID125" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID126" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID127" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID128" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID129" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID130" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID131" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID132" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID133" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID134" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID135" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID136" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID137" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID138" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID139" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID140" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID141" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID142" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID143" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID144" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID145" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID146" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID147" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID148" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID149" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID150" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID151" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID152" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID153" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID154" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID155" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID156" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID157" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID158" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID159" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID160" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID161" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID162" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID163" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID164" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID165" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID166" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID167" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID168" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID169" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID170" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID171" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID172" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID173" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID174" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID175" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID176" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID177" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID178" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID179" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID180" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID181" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID182" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID183" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID184" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID185" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID186" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID187" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID188" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID189" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID190" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID191" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID192" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID193" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID194" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID195" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID196" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID197" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID198" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID199" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID200" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID201" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID202" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID203" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID204" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID205" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID206" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID207" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID208" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID209" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID210" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID211" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID212" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID213" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID214" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID215" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID216" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID217" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID218" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID219" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID220" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID221" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID222" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID223" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID224" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID225" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID226" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID227" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID228" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID229" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID230" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID231" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID232" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID233" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID234" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID235" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID236" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID237" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID238" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID239" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID240" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID241" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID242" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID243" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID244" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID245" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID246" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID247" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID248" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID249" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID250" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID251" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID252" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID253" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID254" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID255" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID256" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID257" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID258" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID259" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID260" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID261" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID262" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID263" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID264" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID265" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID266" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID267" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID268" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID269" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID270" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID271" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID272" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID273" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID274" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID275" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID276" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID277" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID278" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID279" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID280" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID281" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID282" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID283" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID284" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID285" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID286" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID287" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID288" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID289" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID290" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID291" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID292" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID293" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID294" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID295" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID296" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID297" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID298" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID299" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID300" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID301" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID302" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID303" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID304" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID305" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID306" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID307" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID308" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID309" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID310" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID311" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID312" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID313" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID314" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID315" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID316" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID317" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID318" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID319" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID320" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID321" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID322" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID323" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID324" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID325" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID326" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID327" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID328" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID329" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID330" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID331" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID332" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID333" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID334" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID335" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID336" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID337" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID338" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID339" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID340" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID341" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID342" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID343" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID344" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID345" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID346" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID347" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID348" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID349" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID350" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID351" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID352" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID353" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID354" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID355" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID356" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID357" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID358" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID359" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID360" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID361" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID362" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID363" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID364" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID365" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID366" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID367" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID368" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID369" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID370" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID371" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID372" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID373" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID374" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID375" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID376" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID377" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID378" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID379" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID380" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID381" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID382" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID383" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID384" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID385" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID386" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID387" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID388" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID389" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID390" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID391" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID392" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID393" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID394" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID395" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID396" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID397" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID398" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID399" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+<line id = "contentsID400" style = "visibility: hidden; stroke-width: 5px; stroke: #ff4c4c;" />
+</svg>
+<div style = "margin-left: 80px; margin-top: 350px; width: 800px; height: 680px; background-color: #bbeeff;" >
+<svg viewBox="0 0 660 660" width="660px" heigth="660px" xmlns="http://www.w3.org/2000/svg" style="margin-left: -10; margin-top: -10; position: absolute;">
+<rect x = "110" y = "210" width = "100" height = "100" style = "stroke-width: 1px; stroke: #ff4c4c; fill: #ff4c4c;" />
+<line x1 = "10" y1 = "210" x2 = "108" y2 = "210" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "98.40889008453118,213.10582854123024 110,210 98.40889008453118,206.89417145876976" style = "stroke: #000000;" />
+<line x1 = "110" y1 = "210" x2 = "12" y2 = "210" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "21.59110991546882,206.89417145876976 10,210 21.59110991546882,213.10582854123024" style = "stroke: #000000;" />
+<line x1 = "110" y1 = "10" x2 = "110" y2 = "208" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "106.89417145876976,198.40889008453118 110,210 113.10582854123025,198.40889008453118" style = "stroke: #000000;" />
+<line x1 = "110" y1 = "210" x2 = "110" y2 = "12" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "113.10582854123025,21.59110991546882 110,10 106.89417145876976,21.59110991546882" style = "stroke: #000000;" />
+<ellipse cx = "510" cy = "510" rx = "140" ry = "140" style = "stroke-width: 1px; stroke: #ff4c4c; fill: #ff4c4c;" />
+<line x1 = "510" y1 = "510" x2 = "648" y2 = "510" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "638.4088900845312,513.1058285412303 650,510 638.4088900845312,506.89417145876973" style = "stroke: #000000;" />
+<line x1 = "650" y1 = "510" x2 = "512" y2 = "510" style = "stroke: #000000; stroke-width: 2px;" />
+<polygon points = "521.5911099154688,506.89417145876973 510,510 521.5911099154688,513.1058285412303" style = "stroke: #000000;" />
+</svg>
+<div style = "margin-left: 10px; margin-top: 200px; position: absolute; font-size: 30px;" >
+100px
+</div>
+<div style = "margin-left: 110px; margin-top: 70px; position: absolute; font-size: 30px;" >
+200px
+</div>
+<div style = "margin-left: 530px; margin-top: 450px; position: absolute; font-size: 30px;" >
+140px
+</div>
+<div style = "margin-left: 300px; margin-top: 150px; position: absolute; font-size: 30px;" >
+図形位置、大きさは数値で制御
+</div>
+</div>
+</div>
+<button id = "startButtonstart0" onclick = "animationStartMap['start0']()" style = "position: absolute; margin-left: 960px; margin-top: 350px; z-index: 1000;" >
+Start
+</button>
+<button id = "resetButtonstart0" onclick = "animationResetMap['reset0']()" style = "position: absolute; margin-left: 960px; margin-top: 375px; z-index: 1000;" >
+Reset
+</button>
+</div>
+<div id="p5" style="display: none; position: absolute;">
+<div id = "sb5" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 1; margin-top: 880px; padding: 20px; background-color: #aaaaff; font-family: 'Noto Sans JP'; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ";>
+</div>
+<div id = "c5"style="display: none; ">
+<img src="contents_PresentationSlide_nishimura/テール右斜AAA-.png" style="position: absolute; margin-left: 0px; margin-top: -122px; width: 850px; object-position: right 204px top 426px; z-index: 2;" />
+<img src="contents_PresentationSlide_nishimura/dango.png" style="position: absolute; margin-left: 1462px; margin-top: 727px; width: 450px; z-index: 3;" />
+</div>
+<div id = "s5" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 5; margin-top: 880px; padding: 20px; font-family: 'Noto Sans JP'; color: #d11aff; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ;">
+
+</div>
+<div style="width: 1920px; height: 880px; position: absolute; z-index: 0;">
+<div style = "margin-left: 1860px; margin-top: 10px; position: absolute; font-size: 40px;" >
+5
+</div>
+<div style = "margin-left: 50px; margin-top: 50px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 25px; border-left-color: #1e6eff; padding-left: 10px;" >
+原理
+</div>
+<div style = "margin-left: 80px; margin-top: 150px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+ファイル間の関係
+</div>
+<img style = "margin-left: 100px; margin-top: 200px;" src = "contents_PresentationSlide_nishimura\file_slid.svg" />
+</div>
+</div>
+<div id="p6" style="display: none; position: absolute;">
+<div id = "sb6" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 1; margin-top: 880px; padding: 20px; background-color: #aaaaff; font-family: 'Noto Sans JP'; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ";>
+</div>
+<div id = "c6"style="display: none; ">
+<img src="contents_PresentationSlide_nishimura/テール右斜AAA-.png" style="position: absolute; margin-left: 0px; margin-top: -122px; width: 850px; object-position: right 204px top 426px; z-index: 2;" />
+<img src="contents_PresentationSlide_nishimura/dango.png" style="position: absolute; margin-left: 1462px; margin-top: 727px; width: 450px; z-index: 3;" />
+</div>
+<div id = "s6" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 5; margin-top: 880px; padding: 20px; font-family: 'Noto Sans JP'; color: #d11aff; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ;">
+
+</div>
+<div style="width: 1920px; height: 880px; position: absolute; z-index: 0;">
+<div style = "margin-left: 1860px; margin-top: 10px; position: absolute; font-size: 40px;" >
+6
+</div>
+<div style = "margin-left: 50px; margin-top: 50px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 25px; border-left-color: #1e6eff; padding-left: 10px;" >
+アニメーション制御の実装
+</div>
+<div style = "margin-left: 80px; margin-top: 150px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+図形の描画
+</div>
+<div style = "margin-left: 0px; margin-top: 0px; width: 1920px; height: 1080px; background-color: #ffffff;" >
+<svg viewBox="0 0 540 600" width="540px" heigth="600px" xmlns="http://www.w3.org/2000/svg" style="margin-left: 1310; margin-top: 270; position: absolute;">
+<rect x = "10" y = "10" width = "520" height = "580" style = "stroke-width: 1px; stroke: #bbeeff; fill: #bbeeff;" />
+<ellipse cx = "270" cy = "300" rx = "100" ry = "100" style = "stroke-width: 1px; stroke: #ff4c4c; fill: #ff4c4c;" />
+</svg>
+<img style = "margin-left: 100px; margin-top: 200px;" src = "contents_PresentationSlide_nishimura\shape.svg" />
+</div>
+</div>
+</div>
+<div id="p7" style="display: none; position: absolute;">
+<div id = "sb7" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 1; margin-top: 880px; padding: 20px; background-color: #aaaaff; font-family: 'Noto Sans JP'; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ";>
+</div>
+<div id = "c7"style="display: none; ">
+<img src="contents_PresentationSlide_nishimura/テール右斜AAA-.png" style="position: absolute; margin-left: 0px; margin-top: -122px; width: 850px; object-position: right 204px top 426px; z-index: 2;" />
+<img src="contents_PresentationSlide_nishimura/dango.png" style="position: absolute; margin-left: 1462px; margin-top: 727px; width: 450px; z-index: 3;" />
+</div>
+<div id = "s7" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 5; margin-top: 880px; padding: 20px; font-family: 'Noto Sans JP'; color: #d11aff; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ;">
+
+</div>
+<div style="width: 1920px; height: 880px; position: absolute; z-index: 0;">
+<div style = "margin-left: 1860px; margin-top: 10px; position: absolute; font-size: 40px;" >
+7
+</div>
+<div style = "margin-left: 50px; margin-top: 50px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 25px; border-left-color: #1e6eff; padding-left: 10px;" >
+アニメーション制御の実装
+</div>
+<div style = "margin-left: 80px; margin-top: 150px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+アニメーション処理（例：直線）
+</div>
+<svg viewBox="0 0 420 580" 
+width="420px" 
+heigth="580px" 
+xmlns="http://www.w3.org/2000/svg" 
+style="margin-left: 1400; 
+margin-top: 280; 
+position: absolute;
+background-color: #bbeeff;
+">
+<line id = "contentsID401" style = "visibility: hidden; stroke-width: 3px; stroke: #ff4c4c;" />
+</svg>
+<img style = "margin-left: 100px; margin-top: 200px;" src = "contents_PresentationSlide_nishimura\line_code.svg" />
+</div>
+<button id = "startButtonstart1" onclick = "animationStartMap['start1']()" style = "position: absolute; margin-left: 1320px; margin-top: 280px; z-index: 1000;" >
+Start
+</button>
+<button id = "resetButtonstart1" onclick = "animationResetMap['reset1']()" style = "position: absolute; margin-left: 1320px; margin-top: 305px; z-index: 1000;" >
+Reset
+</button>
+</div>
+<div id="p8" style="display: none; position: absolute;">
+<div id = "sb8" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 1; margin-top: 880px; padding: 20px; background-color: #aaaaff; font-family: 'Noto Sans JP'; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ";>
+</div>
+<div id = "c8"style="display: none; ">
+<img src="contents_PresentationSlide_nishimura/テール右斜AAA-.png" style="position: absolute; margin-left: 0px; margin-top: -122px; width: 850px; object-position: right 204px top 426px; z-index: 2;" />
+<img src="contents_PresentationSlide_nishimura/dango.png" style="position: absolute; margin-left: 1462px; margin-top: 727px; width: 450px; z-index: 3;" />
+</div>
+<div id = "s8" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 5; margin-top: 880px; padding: 20px; font-family: 'Noto Sans JP'; color: #d11aff; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ;">
+
+</div>
+<div style="width: 1920px; height: 880px; position: absolute; z-index: 0;">
+<div style = "margin-left: 1860px; margin-top: 10px; position: absolute; font-size: 40px;" >
+8
+</div>
+<div style = "margin-left: 50px; margin-top: 50px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 25px; border-left-color: #1e6eff; padding-left: 10px;" >
+アニメーション制御の実装
+</div>
+<div style = "margin-left: 80px; margin-top: 150px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+波形のアニメーション
+</div>
+<div style = "margin-left: 1270px; margin-top: 400px; position: absolute; font-size: 30px; color: #0033ff;" >
+line1
+</div>
+<div style = "margin-left: 1270px; margin-top: 730px; position: absolute; font-size: 30px; color: #006400;" >
+line2
+</div>
+<svg viewBox="0 0 520 680" 
+width="520px" 
+heigth="680px" 
+xmlns="http://www.w3.org/2000/svg" 
+style="margin-left: 1350; 
+margin-top: 280; 
+position: absolute;
+background-color: #bbeeff;
+">
+<line id = "contentsID402" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID403" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID404" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID405" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID406" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID407" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID408" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID409" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID410" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID411" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID412" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID413" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID414" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID415" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID416" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID417" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID418" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID419" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID420" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID421" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID422" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID423" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID424" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID425" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID426" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID427" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID428" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID429" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID430" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID431" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID432" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID433" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID434" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID435" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID436" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID437" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID438" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID439" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID440" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID441" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID442" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID443" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID444" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID445" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID446" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID447" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID448" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID449" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID450" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID451" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID452" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID453" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID454" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID455" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID456" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID457" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID458" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID459" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID460" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID461" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID462" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID463" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID464" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID465" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID466" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID467" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID468" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID469" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID470" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID471" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID472" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID473" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID474" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID475" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID476" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID477" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID478" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID479" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID480" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID481" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID482" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID483" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID484" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID485" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID486" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID487" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID488" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID489" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID490" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID491" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID492" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID493" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID494" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID495" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID496" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID497" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID498" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID499" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID500" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID501" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID502" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID503" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID504" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID505" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID506" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID507" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID508" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID509" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID510" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID511" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID512" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID513" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID514" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID515" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID516" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID517" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID518" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID519" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID520" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID521" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID522" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID523" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID524" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID525" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID526" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID527" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID528" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID529" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID530" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID531" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID532" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID533" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID534" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID535" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID536" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID537" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID538" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID539" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID540" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID541" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID542" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID543" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID544" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID545" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID546" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID547" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID548" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID549" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID550" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID551" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID552" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID553" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID554" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID555" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID556" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID557" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID558" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID559" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID560" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID561" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID562" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID563" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID564" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID565" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID566" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID567" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID568" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID569" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID570" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID571" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID572" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID573" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID574" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID575" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID576" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID577" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID578" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID579" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID580" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID581" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID582" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID583" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID584" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID585" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID586" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID587" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID588" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID589" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID590" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID591" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID592" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID593" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID594" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID595" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID596" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID597" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID598" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID599" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+<line id = "contentsID600" style = "visibility: hidden; stroke-width: 3px; stroke: #0033ff;" />
+<line id = "contentsID601" style = "visibility: hidden; stroke-width: 8px; stroke: #006400;" />
+</svg>
+<img style = "margin-left: 50px; margin-top: 200px;" src = "contents_PresentationSlide_nishimura\let_n.svg" />
+</div>
+<button id = "startButtonstart2" onclick = "animationStartMap['start2']()" style = "position: absolute; margin-left: 1270px; margin-top: 280px; z-index: 1000;" >
+Start
+</button>
+<button id = "resetButtonstart2" onclick = "animationResetMap['reset2']()" style = "position: absolute; margin-left: 1270px; margin-top: 305px; z-index: 1000;" >
+Reset
+</button>
+</div>
+<div id="p9" style="display: none; position: absolute;">
+<div id = "sb9" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 1; margin-top: 880px; padding: 20px; background-color: #aaaaff; font-family: 'Noto Sans JP'; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ";>
+</div>
+<div id = "c9"style="display: none; ">
+<img src="contents_PresentationSlide_nishimura/テール右斜AAA-.png" style="position: absolute; margin-left: 0px; margin-top: -122px; width: 850px; object-position: right 204px top 426px; z-index: 2;" />
+<img src="contents_PresentationSlide_nishimura/dango.png" style="position: absolute; margin-left: 1462px; margin-top: 727px; width: 450px; z-index: 3;" />
+</div>
+<div id = "s9" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 5; margin-top: 880px; padding: 20px; font-family: 'Noto Sans JP'; color: #d11aff; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ;">
+
+</div>
+<div style="width: 1920px; height: 880px; position: absolute; z-index: 0;">
+<div style = "margin-left: 1860px; margin-top: 10px; position: absolute; font-size: 40px;" >
+9
+</div>
+<div style = "margin-left: 50px; margin-top: 50px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 25px; border-left-color: #1e6eff; padding-left: 10px;" >
+アニメーション制御の実装
+</div>
+<div style = "margin-left: 80px; margin-top: 150px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+図形のアニメーション
+</div>
+<div style = "margin-left: 100px; margin-top: 250px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 30px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #1e6eff; padding-left: 10px; display: inline-block;" >
+Aqualis（ユーザが作成）
+</div>
+<div style = "margin-left: 100px; margin-top: 650px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 30px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #1e6eff; padding-left: 10px; display: inline-block;" >
+アニメーションの実行順序（JavaScriptファイル）
+</div>
+<svg viewBox="0 0 700 780" 
+width="700px" 
+heigth="780px" 
+xmlns="http://www.w3.org/2000/svg" 
+style="margin-left: 1140; 
+margin-top: 250; 
+position: absolute;
+background-color: #bbeeff;
+">
+<line id = "contentsID602" style = "visibility: hidden; stroke-width: 4px; stroke-dasharray: 4,4; stroke: #ff69b4;" />
+<path id = "contentsID603" style = "visibility: hidden; stroke-width: 6px; stroke: #006400; fill: none;" />
+</svg>
+<div style = "margin-left: 120px; margin-top: 320px; width: 950px; height: 750px; background-color: #ffffff;" >
+<img style = "margin-left: 0px; margin-top: 0px;" src = "contents_PresentationSlide_nishimura\line_arc.svg" />
+<img style = "margin-left: 0px; margin-top: 90px;" src = "contents_PresentationSlide_nishimura\line_arc_js.svg" />
+</div>
+</div>
+<button id = "startButtonstart3" onclick = "animationStartMap['start3']()" style = "position: absolute; margin-left: 1080px; margin-top: 250px; z-index: 1000;" >
+Start
+</button>
+<button id = "resetButtonstart3" onclick = "animationResetMap['reset3']()" style = "position: absolute; margin-left: 1080px; margin-top: 275px; z-index: 1000;" >
+Reset
+</button>
+</div>
+<div id="p10" style="display: none; position: absolute;">
+<div id = "sb10" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 1; margin-top: 880px; padding: 20px; background-color: #aaaaff; font-family: 'Noto Sans JP'; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ";>
+</div>
+<div id = "c10"style="display: none; ">
+<img src="contents_PresentationSlide_nishimura/テール右斜AAA-.png" style="position: absolute; margin-left: 0px; margin-top: -122px; width: 850px; object-position: right 204px top 426px; z-index: 2;" />
+<img src="contents_PresentationSlide_nishimura/dango.png" style="position: absolute; margin-left: 1462px; margin-top: 727px; width: 450px; z-index: 3;" />
+</div>
+<div id = "s10" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 5; margin-top: 880px; padding: 20px; font-family: 'Noto Sans JP'; color: #d11aff; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ;">
+
+</div>
+<div style="width: 1920px; height: 880px; position: absolute; z-index: 0;">
+<div style = "margin-left: 1840px; margin-top: 10px; position: absolute; font-size: 40px;" >
+10
+</div>
+<div style = "margin-left: 50px; margin-top: 50px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 25px; border-left-color: #1e6eff; padding-left: 10px;" >
+繰り返し処理で大量のアニメーションを表示する例
+</div>
+<div style = "margin-left: 910px; margin-top: 150px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 30px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #1e6eff; padding-left: 10px; display: inline-block;" >
+ソースコード
+</div>
+<svg viewBox="0 0 700 880" 
+width="700px" 
+heigth="880px" 
+xmlns="http://www.w3.org/2000/svg" 
+style="margin-left: 160; 
+margin-top: 150; 
+position: absolute;
+background-color: #bbeeff;
+">
+<ellipse id = "contentsID604" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID605" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID606" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID607" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID608" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID609" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID610" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID611" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID612" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID613" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID614" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID615" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID616" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID617" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID618" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID619" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID620" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID621" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID622" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID623" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID624" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID625" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID626" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID627" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID628" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID629" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID630" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID631" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID632" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID633" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID634" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID635" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID636" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID637" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID638" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID639" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID640" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID641" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID642" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID643" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID644" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID645" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID646" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID647" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID648" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID649" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID650" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID651" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID652" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID653" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID654" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID655" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID656" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID657" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID658" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID659" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID660" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID661" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID662" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID663" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID664" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID665" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID666" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID667" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID668" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID669" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID670" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID671" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID672" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID673" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID674" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID675" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID676" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID677" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID678" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID679" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID680" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID681" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID682" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID683" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID684" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID685" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID686" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID687" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID688" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID689" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID690" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID691" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID692" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID693" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID694" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID695" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID696" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID697" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID698" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID699" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID700" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID701" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID702" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID703" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID704" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID705" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID706" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID707" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID708" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID709" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID710" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID711" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID712" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID713" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID714" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID715" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID716" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID717" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID718" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID719" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID720" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID721" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID722" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID723" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID724" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID725" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID726" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID727" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID728" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID729" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID730" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID731" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID732" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID733" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID734" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID735" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID736" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID737" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID738" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID739" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID740" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID741" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID742" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID743" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID744" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID745" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID746" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID747" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID748" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID749" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID750" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID751" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID752" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID753" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID754" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID755" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID756" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID757" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID758" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID759" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID760" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID761" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID762" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID763" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID764" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID765" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID766" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID767" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID768" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID769" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID770" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID771" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID772" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID773" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID774" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID775" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID776" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID777" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID778" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID779" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID780" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID781" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID782" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID783" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID784" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID785" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID786" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID787" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID788" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID789" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID790" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID791" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID792" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID793" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID794" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID795" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID796" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID797" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID798" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID799" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID800" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID801" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID802" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID803" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID804" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID805" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID806" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID807" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID808" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID809" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID810" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID811" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID812" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID813" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID814" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID815" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID816" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID817" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID818" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID819" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID820" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID821" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID822" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID823" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID824" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID825" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID826" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID827" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID828" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID829" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID830" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID831" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID832" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID833" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID834" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID835" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID836" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID837" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID838" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID839" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID840" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID841" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID842" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID843" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID844" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID845" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID846" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID847" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID848" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID849" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID850" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID851" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID852" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID853" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID854" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID855" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID856" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID857" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID858" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID859" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID860" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID861" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID862" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID863" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID864" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID865" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID866" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID867" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID868" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID869" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID870" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID871" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID872" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID873" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID874" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID875" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID876" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID877" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID878" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID879" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID880" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID881" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID882" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID883" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID884" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID885" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID886" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID887" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID888" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID889" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID890" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID891" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID892" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID893" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID894" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID895" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID896" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID897" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID898" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID899" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID900" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID901" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID902" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID903" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID904" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID905" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID906" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID907" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID908" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID909" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID910" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID911" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID912" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID913" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID914" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID915" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID916" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID917" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID918" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID919" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID920" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID921" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID922" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID923" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID924" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID925" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID926" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID927" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID928" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID929" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID930" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID931" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID932" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID933" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID934" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID935" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID936" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID937" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID938" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID939" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID940" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID941" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID942" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID943" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID944" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID945" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID946" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID947" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID948" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID949" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID950" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID951" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID952" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID953" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID954" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID955" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID956" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID957" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID958" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID959" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID960" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID961" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID962" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID963" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID964" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID965" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID966" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID967" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID968" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID969" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID970" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID971" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID972" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID973" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID974" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID975" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID976" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID977" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID978" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID979" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID980" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID981" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID982" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID983" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID984" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID985" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID986" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID987" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID988" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID989" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID990" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID991" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID992" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID993" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID994" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID995" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID996" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID997" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID998" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID999" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID1000" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID1001" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID1002" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+<ellipse id = "contentsID1003" style = "visibility: hidden; stroke-width: 3px; stroke: #0000ff; fill: #0000ff;" />
+</svg>
+<div style = "margin-left: 910px; margin-top: 220px; width: 900px; height: 780px; background-color: #ffffff;" >
+<img style = "margin-left: 0px; margin-top: 0px;" src = "contents_PresentationSlide_nishimura\let_n_m.svg" />
+</div>
+</div>
+<button id = "startButtonstart4" onclick = "animationStartMap['start4']()" style = "position: absolute; margin-left: 100px; margin-top: 150px; z-index: 1000;" >
+Start
+</button>
+<button id = "resetButtonstart4" onclick = "animationResetMap['reset4']()" style = "position: absolute; margin-left: 100px; margin-top: 175px; z-index: 1000;" >
+Reset
+</button>
+</div>
+<div id="p11" style="display: none; position: absolute;">
+<div id = "sb11" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 1; margin-top: 880px; padding: 20px; background-color: #aaaaff; font-family: 'Noto Sans JP'; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ";>
+</div>
+<div id = "c11"style="display: none; ">
+<img src="contents_PresentationSlide_nishimura/テール右斜AAA-.png" style="position: absolute; margin-left: 0px; margin-top: -122px; width: 850px; object-position: right 204px top 426px; z-index: 2;" />
+<img src="contents_PresentationSlide_nishimura/dango.png" style="position: absolute; margin-left: 1462px; margin-top: 727px; width: 450px; z-index: 3;" />
+</div>
+<div id = "s11" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 5; margin-top: 880px; padding: 20px; font-family: 'Noto Sans JP'; color: #d11aff; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ;">
+
+</div>
+<div style="width: 1920px; height: 880px; position: absolute; z-index: 0;">
+<div style = "margin-left: 1840px; margin-top: 10px; position: absolute; font-size: 40px;" >
+11
+</div>
+<div style = "margin-left: 350px; margin-top: 50px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 25px; border-left-color: #1e6eff; padding-left: 10px;" >
+まとめ
+</div>
+<div style = "margin-left: 380px; margin-top: 150px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+目的
+</div>
+<div style = "margin-left: 400px; margin-top: 250px; position: absolute; font-size: 30px;" >
+・数値解析プログラムのコードを流用して、プレゼンテーション資料を効率的に作成する
+</div>
+<div style = "margin-left: 400px; margin-top: 300px; position: absolute; font-size: 30px;" >
+　→図形位置、大きさを数値で制御
+</div>
+<div style = "margin-left: 400px; margin-top: 350px; position: absolute; font-size: 30px;" >
+　→波形などのアニメーションを簡単描画
+</div>
+<div style = "margin-left: 380px; margin-top: 450px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+研究内容
+</div>
+<div style = "margin-left: 400px; margin-top: 550px; position: absolute; font-size: 30px;" >
+Aqualisのコード→HTML・JavaScriptのコードを生成するライブラリ（関数群）を実装
+</div>
+<div style = "margin-left: 380px; margin-top: 650px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+結果
+</div>
+<div style = "margin-left: 400px; margin-top: 750px; position: absolute; font-size: 30px;" >
+数値解析用プログラミング言語（Aqualis）と共通のコードでスライドも作れる
+</div>
+<div style = "margin-left: 400px; margin-top: 800px; position: absolute; font-size: 30px;" >
+正確な図・アニメーションを効率的に作成可能
+</div>
+</div>
+</div>
+<div id="p12" style="display: none; position: absolute;">
+<div id = "sb12" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 1; margin-top: 880px; padding: 20px; background-color: #aaaaff; font-family: 'Noto Sans JP'; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ";>
+</div>
+<div id = "c12"style="display: none; ">
+<img src="contents_PresentationSlide_nishimura/テール右斜AAA-.png" style="position: absolute; margin-left: 0px; margin-top: -122px; width: 850px; object-position: right 204px top 426px; z-index: 2;" />
+<img src="contents_PresentationSlide_nishimura/dango.png" style="position: absolute; margin-left: 1462px; margin-top: 727px; width: 450px; z-index: 3;" />
+</div>
+<div id = "s12" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 5; margin-top: 880px; padding: 20px; font-family: 'Noto Sans JP'; color: #d11aff; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ;">
+こんなふうに、音声も流せるんですよね。
+</div>
+<div style="width: 1920px; height: 880px; position: absolute; z-index: 0;">
+<div style = "margin-left: 1840px; margin-top: 10px; position: absolute; font-size: 40px;" >
+12
+</div>
+<div style = "margin-left: 350px; margin-top: 50px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 25px; border-left-color: #1e6eff; padding-left: 10px;" >
+まとめ
+</div>
+<div style = "margin-left: 380px; margin-top: 150px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+目的
+</div>
+<div style = "margin-left: 400px; margin-top: 250px; position: absolute; font-size: 30px;" >
+・数値解析プログラムのコードを流用して、プレゼンテーション資料を効率的に作成する
+</div>
+<div style = "margin-left: 400px; margin-top: 300px; position: absolute; font-size: 30px;" >
+　→図形位置、大きさを数値で制御
+</div>
+<div style = "margin-left: 400px; margin-top: 350px; position: absolute; font-size: 30px;" >
+　→波形などのアニメーションを簡単描画
+</div>
+<div style = "margin-left: 380px; margin-top: 450px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+研究内容
+</div>
+<div style = "margin-left: 400px; margin-top: 550px; position: absolute; font-size: 30px;" >
+Aqualisのコード→HTML・JavaScriptのコードを生成するライブラリ（関数群）を実装
+</div>
+<div style = "margin-left: 380px; margin-top: 650px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+結果
+</div>
+<div style = "margin-left: 400px; margin-top: 750px; position: absolute; font-size: 30px;" >
+数値解析用プログラミング言語（Aqualis）と共通のコードでスライドも作れる
+</div>
+<div style = "margin-left: 400px; margin-top: 800px; position: absolute; font-size: 30px;" >
+正確な図・アニメーションを効率的に作成可能
+</div>
+</div>
+</div>
+<div id="p13" style="display: none; position: absolute;">
+<div id = "sb13" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 1; margin-top: 880px; padding: 20px; background-color: #aaaaff; font-family: 'Noto Sans JP'; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ";>
+</div>
+<div id = "c13"style="display: none; ">
+<img src="contents_PresentationSlide_nishimura/テール右斜AAA-.png" style="position: absolute; margin-left: 0px; margin-top: -122px; width: 850px; object-position: right 204px top 426px; z-index: 2;" />
+<img src="contents_PresentationSlide_nishimura/dango.png" style="position: absolute; margin-left: 1462px; margin-top: 727px; width: 450px; z-index: 3;" />
+</div>
+<div id = "s13" style="width: 1880px; height: 160px; display: none; position: absolute; z-index: 5; margin-top: 880px; padding: 20px; font-family: 'Noto Sans JP'; color: #455eff; font-size: 36pt; font-weight: 800; text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff ;">
+ってことはさ、オンデマンド教材にも使えるってこと？
+</div>
+<div style="width: 1920px; height: 880px; position: absolute; z-index: 0;">
+<div style = "margin-left: 1840px; margin-top: 10px; position: absolute; font-size: 40px;" >
+13
+</div>
+<div style = "margin-left: 350px; margin-top: 50px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 25px; border-left-color: #1e6eff; padding-left: 10px;" >
+まとめ
+</div>
+<div style = "margin-left: 380px; margin-top: 150px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+目的
+</div>
+<div style = "margin-left: 400px; margin-top: 250px; position: absolute; font-size: 30px;" >
+・数値解析プログラムのコードを流用して、プレゼンテーション資料を効率的に作成する
+</div>
+<div style = "margin-left: 400px; margin-top: 300px; position: absolute; font-size: 30px;" >
+　→図形位置、大きさを数値で制御
+</div>
+<div style = "margin-left: 400px; margin-top: 350px; position: absolute; font-size: 30px;" >
+　→波形などのアニメーションを簡単描画
+</div>
+<div style = "margin-left: 380px; margin-top: 450px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+研究内容
+</div>
+<div style = "margin-left: 400px; margin-top: 550px; position: absolute; font-size: 30px;" >
+Aqualisのコード→HTML・JavaScriptのコードを生成するライブラリ（関数群）を実装
+</div>
+<div style = "margin-left: 380px; margin-top: 650px; position: absolute; font-family: 'Noto Sans JP'; color: black; white-space: nowrap; font-size: 40px; border-left-style: solid; border-left-width: 15px; border-left-color: #1e6eff; padding-left: 10px;" >
+結果
+</div>
+<div style = "margin-left: 400px; margin-top: 750px; position: absolute; font-size: 30px;" >
+数値解析用プログラミング言語（Aqualis）と共通のコードでスライドも作れる
+</div>
+<div style = "margin-left: 400px; margin-top: 800px; position: absolute; font-size: 30px;" >
+正確な図・アニメーションを効率的に作成可能
+</div>
+</div>
+</div>
+<button id="prevButton" style="position: absolute; z-index: 100;" onclick="drawPrev()">
+前へ
+</button>
+<button id="nextButton" style="position: absolute; margin-left: 75px; z-index: 100;" onclick="drawNext()">
+次へ
+</button>
+<input type="checkbox" id="switchCharacter" style="position: absolute; margin-top: 6px; margin-left: 150px; z-index: 100;"  onclick="setCharacter()"  />
+<label style="position: absolute; margin-top: 0px; margin-left: 165px; z-index: 100;">
+キャラクター
+</label>
+<input type="checkbox" id="switchSubtitle" style="position: absolute; margin-top: 6px; margin-left: 270px; z-index: 100;" onclick="setSubtitle()"  />
+<label style="position: absolute; margin-top: 0px; margin-left: 285px; z-index: 100;">
+字幕
+</label>
+<input type="checkbox" id="switchAudio" style="position: absolute; margin-top: 6px; margin-left: 330px; z-index: 100;" onclick="setSubtitle()"  />
+<label style="position: absolute; margin-top: 0px; margin-left: 345px; z-index: 100;">
+音声
+</label>
+<audio id="audioPlayer">
+</audio>
+
+</div>
+</body>
+</html>

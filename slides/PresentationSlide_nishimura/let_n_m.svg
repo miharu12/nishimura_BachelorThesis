@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="950px" height="780px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(0.866016,0,0,0.884964,-91.390384,3.936432)">
+        <rect x="141.966" y="187.388" width="1043.384" height="503.085" style="fill:rgb(230,240,255);"/>
+    </g>
+    <g transform="matrix(0.837659,0,0,0.722903,-65.192625,98.493123)">
+        <rect x="141.966" y="187.388" width="1043.384" height="503.085" style="fill:rgb(168,200,255);"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-280.399383,-267.983907)">
+        <text x="304.607px" y="301.788px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">le<tspan x="324.455px " y="301.788px ">t</tspan> n = 40</text>
+        <text x="304.607px" y="336.54px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">le<tspan x="324.455px " y="336.54px ">t</tspan> m = 10</text>
+        <text x="304.607px" y="371.292px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">le<tspan x="324.455px " y="371.292px ">t</tspan> pointR = I 5</text>
+        <text x="304.607px" y="406.044px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">f<tspan x="311.063px " y="406.044px ">.</tspan>seq {F<tspan x="383.351px 392.015px " y="406.044px 406.044px ">ra</tspan>me<tspan x="440.399px " y="406.044px ">T</tspan>ime=60; F<tspan x="561.623px 570.287px " y="406.044px 406.044px ">ra</tspan>meNumber=900} &lt;| fun _ -&gt;</text>
+        <text x="326.111px" y="470.044px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">f<tspan x="333.647px " y="470.044px ">o</tspan>r j in 0 .. (m-1) do</text>
+        <text x="347.615px" y="534.044px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">f<tspan x="355.151px " y="534.044px ">o</tspan>r i in 0 .. (n-1) do</text>
+        <text x="369.119px" y="568.796px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">le<tspan x="388.967px " y="568.796px ">t</tspan> elps0 = f<tspan x="493.463px " y="568.796px ">.</tspan>anima<tspan x="570.263px " y="568.796px ">t</tspan>ionEllipse</text>
+        <text x="544.607px" y="603.548px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;"><tspan x="544.607px 558.263px " y="603.548px 603.548px ">St</tspan>yle[s<tspan x="618.743px 627.791px 636.839px 651.383px 664.151px 677.447px 683.519px " y="603.548px 603.548px 603.548px 603.548px 603.548px 603.548px 603.548px ">troke.w</tspan>idth 3.0;</text>
+        <g transform="matrix(24,0,0,24,836.567383,638.299907)">
+        </g>
+        <g transform="matrix(24,0,0,24,844.283383,638.299907)">
+        </g>
+        <text x="619.487px" y="638.3px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">s<tspan x="630.191px 639.239px 648.287px 662.831px 675.599px 688.895px 695.255px 706.919px " y="638.3px 638.3px 638.3px 638.3px 638.3px 638.3px 638.3px 638.3px ">troke.co</tspan>lor &quot;#0000ﬀ<tspan x="851.999px " y="638.3px ">&quot;</tspan>;</text>
+        <g transform="matrix(24,0,0,24,669.839383,673.051907)">
+        </g>
+        <g transform="matrix(24,0,0,24,677.639383,673.051907)">
+        </g>
+        <g transform="matrix(24,0,0,24,782.303383,673.051907)">
+        </g>
+        <g transform="matrix(24,0,0,24,790.019383,673.051907)">
+        </g>
+        <text x="593.759px" y="673.052px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">s<tspan x="604.463px 613.511px 622.559px 637.103px 649.871px " y="673.052px 673.052px 673.052px 673.052px 673.052px ">troke</tspan>.ﬁll &quot;#0000ﬀ<tspan x="797.735px " y="673.052px ">&quot;</tspan>;]</text>
+        <text x="369.119px" y="707.804px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">elps0.P {</text>
+        <text x="390.623px" y="742.556px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">c<tspan x="402.287px " y="742.556px ">e</tspan>nt<tspan x="438.911px " y="742.556px ">e</tspan>r = { X = (fun _ -&gt; Dbl_e 10+20*i );</text>
+        <text x="497.759px" y="777.308px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">Y = fun t -&gt; 0+100*j+100*asm.sin(Dbl_e i*0.1-2.0*Ma<tspan x="1068.383px " y="777.308px ">t</tspan>h.PI*t<tspan x="1141.415px " y="777.308px ">/</tspan>100)}</text>
+        <text x="448.607px" y="812.06px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">r<tspan x="457.271px " y="812.06px ">a</tspan>diusX = fun _ -&gt; pointR</text>
+        <text x="448.607px" y="846.812px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">r<tspan x="457.271px " y="846.812px ">a</tspan>dius<tspan x="517.535px " y="846.812px ">Y</tspan> = fun _ -&gt; pointR}</text>
+    </g>
+    <g transform="matrix(1,0,0,1,51.887059,-536.653429)">
+        <g transform="matrix(24,0,0,24,603.844941,738.713429)">
+        </g>
+        <text x="241.205px" y="738.713px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">円で構成した波形を縦に10段配置</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-562.657788,-460.248604)">
+        <g transform="matrix(24,0,0,24,1206.497788,726.308604)">
+        </g>
+        <text x="868.338px" y="726.309px" style="font-family:'HaranoAjiGothic-Regular', 'Harano Aji Gothic', sans-serif;font-size:24px;">円を横方向に<tspan x="1012.578px " y="726.309px ">ず</tspan>らし<tspan x="1083.858px " y="726.309px ">て</tspan>40個配置</text>
+    </g>
+</svg>
